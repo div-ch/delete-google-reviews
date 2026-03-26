@@ -54,7 +54,7 @@
         },
         "telephone": "+1-800-000-0000",
         "email": "info@nexusmultimedia.com",
-        "priceRange": "$700 - $950 per review",
+        "priceRange": "Custom pricing. Request a free quote.",
         "areaServed": "United States",
         "sameAs": []
       },
@@ -65,21 +65,11 @@
         "provider": {
           "@id": "https://nexusmultimedia.com/#business"
         },
-        "description": "Professional removal of negative, fake, or policy-violating reviews from Google, Glassdoor, Avvo, Yelp, and Reddit.",
+        "description": "Professional removal of negative, fake, or policy-violating reviews from Google, Glassdoor, Avvo, Yelp, Reddit, and Airbnb.",
         "serviceType": "Online Reputation Management",
         "offers": {
           "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "700",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "700",
-            "priceCurrency": "USD",
-            "unitText": "per review removed",
-            "minPrice": "700",
-            "maxPrice": "950"
-          },
-          "description": "Pay only for reviews successfully removed. Starting at $700 per review.",
+          "description": "Pay only for reviews successfully removed. Request a free quote for custom pricing.",
           "availability": "https://schema.org/InStock"
         },
         "aggregateRating": {
@@ -97,7 +87,7 @@
             "name": "How long does review removal take?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Most removals are completed within 14 to 30 days. Complex cases may take up to 60 days. We keep you updated throughout the process."
+              "text": "Most removals are completed within 1 to 14 business days. Complex cases may take longer. We keep you updated throughout the process."
             }
           },
           {
@@ -121,7 +111,7 @@
             "name": "Which platforms do you work with?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We handle removals on Google, Glassdoor, Avvo, Yelp, and Reddit."
+              "text": "We handle removals on Google, Glassdoor, Avvo, Yelp, Reddit, and Airbnb."
             }
           },
           {
@@ -1586,6 +1576,152 @@
     .scroll-top:hover {
       background: var(--blue);
     }
+
+    /* ===================== TRUST BADGES ===================== */
+    .trust-bar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 14px 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .trust-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      background: var(--gray-50);
+      color: var(--navy);
+      border: 1.5px solid var(--gray-200);
+    }
+
+    .trust-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+
+    /* ===================== PUBLICATIONS CAROUSEL ===================== */
+    .publications {
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 40px 0;
+      overflow: hidden;
+    }
+
+    .publications-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+    }
+
+    .marquee-wrapper {
+      position: relative;
+    }
+
+    .marquee-wrapper::before,
+    .marquee-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .marquee-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, white 0%, transparent 100%);
+    }
+
+    .marquee-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, white 0%, transparent 100%);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee-scroll 28s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gray-400);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .marquee-item:hover {
+      color: var(--navy);
+    }
+
+    .marquee-sep {
+      color: var(--gray-200);
+      font-size: 22px;
+      line-height: 1;
+      align-self: center;
+    }
+
+    /* ===================== AIRBNB ICON ===================== */
+    .icon-airbnb { background: #fff1f0; }
+
+    /* ===================== PRICING CUSTOM ===================== */
+    .pricing-custom-headline {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin: 20px 0 10px;
+    }
+
+    .pricing-custom-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
   </style>
 </head>
 <body>
@@ -1733,6 +1869,36 @@
     </div>
   </section>
 
+  <!-- ===================== TRUST BADGES ===================== -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-badge">
+        <span class="trust-badge-dot"></span>
+        94% Success Rate
+      </div>
+      <div class="trust-badge">
+        <span class="trust-badge-dot"></span>
+        500+ Reviews Removed
+      </div>
+      <div class="trust-badge">
+        <span class="trust-badge-dot"></span>
+        Featured in Forbes and USA Today
+      </div>
+      <div class="trust-badge">
+        <span class="trust-badge-dot"></span>
+        No Results, No Charge Guarantee
+      </div>
+      <div class="trust-badge">
+        <span class="trust-badge-dot"></span>
+        12 Years in Business
+      </div>
+      <div class="trust-badge">
+        <span class="trust-badge-dot"></span>
+        Confidential and Secure
+      </div>
+    </div>
+  </div>
+
   <!-- ===================== PLATFORMS ===================== -->
   <section class="platforms" id="platforms">
     <div class="container">
@@ -1794,6 +1960,17 @@
             </svg>
           </div>
           <span class="platform-name">Reddit</span>
+        </div>
+
+        <div class="platform-card">
+          <div class="platform-icon icon-airbnb">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 4C11.5 4 9.5 6 9.5 8.5c0 1.8 1 3.4 2.5 5.5 1 1.4 2 2.8 2 4 0 1.4-1.1 2.5-2.5 2.5S9 19.4 9 18c0-.6.2-1.1.5-1.5" stroke="#FF5A5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 4c2.5 0 4.5 2 4.5 4.5 0 1.8-1 3.4-2.5 5.5-1 1.4-2 2.8-2 4 0 1.4 1.1 2.5 2.5 2.5S19 19.4 19 18c0-.6-.2-1.1-.5-1.5" stroke="#FF5A5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="14" cy="8.5" r="2" fill="#FF5A5F"/>
+            </svg>
+          </div>
+          <span class="platform-name">Airbnb</span>
         </div>
       </div>
     </div>
@@ -1939,14 +2116,10 @@
         <div class="pricing-left">
           <div class="section-label">Pricing</div>
           <h2 class="section-title">Pay Only for Results</h2>
-          <div class="pricing-amount">
-            <span class="pricing-currency">$</span>
-            <span class="pricing-value">700</span>
-            <span class="pricing-unit">per review removed</span>
-          </div>
-          <p class="pricing-note">Complex cases may be priced up to $950. All pricing discussed before any work begins.</p>
+          <p class="pricing-custom-headline">Custom pricing based on your case.</p>
+          <p class="pricing-custom-sub">Every situation is different. Request a free quote for a custom analysis and pricing specific to your reviews, platform, and volume. All pricing is discussed and agreed upon before any work begins.</p>
           <div class="pricing-cta">
-            <a href="#intake-form" class="btn btn-orange btn-lg">Get a Free Quote</a>
+            <a href="#intake-form" class="btn btn-orange btn-lg">Get Custom Pricing</a>
           </div>
         </div>
         <div class="pricing-features">
@@ -1956,7 +2129,7 @@
                 <path d="M2 6l3 3 5-5" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            Zero upfront fees. You pay per successful removal.
+            Zero upfront fees. You pay per successful removal only.
           </div>
           <div class="pricing-feature">
             <div class="pricing-feature-check">
@@ -1972,7 +2145,7 @@
                 <path d="M2 6l3 3 5-5" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            Free consultation and case evaluation.
+            Free consultation, case evaluation, and custom quote.
           </div>
           <div class="pricing-feature">
             <div class="pricing-feature-check">
@@ -1988,7 +2161,7 @@
                 <path d="M2 6l3 3 5-5" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            Google, Glassdoor, Avvo, Yelp, and Reddit covered.
+            Google, Glassdoor, Avvo, Yelp, Reddit, and Airbnb covered.
           </div>
           <div class="pricing-feature">
             <div class="pricing-feature-check">
@@ -2069,6 +2242,32 @@
     </div>
   </section>
 
+  <!-- ===================== PUBLICATIONS CAROUSEL ===================== -->
+  <section class="publications">
+    <div class="publications-label">As Featured In</div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <span class="marquee-item">USA Today</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Forbes</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Time</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Rolling Stone</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Variety</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Entrepreneur</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Business Insider</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Yahoo Finance</span><span class="marquee-sep">|</span>
+        <!-- Duplicate set for seamless loop -->
+        <span class="marquee-item">USA Today</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Forbes</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Time</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Rolling Stone</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Variety</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Entrepreneur</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Business Insider</span><span class="marquee-sep">|</span>
+        <span class="marquee-item">Yahoo Finance</span><span class="marquee-sep">|</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== FAQ ===================== -->
   <section class="section faq" id="faq">
     <div class="container">
@@ -2087,7 +2286,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Most removals are completed within 14 to 30 days. Complex cases or reviews requiring escalation may take up to 60 days. We provide status updates throughout so you always know where things stand.
+              Most removals are completed within 1 to 14 business days. Complex cases or reviews requiring escalation may take additional time. We provide status updates throughout so you always know where things stand.
             </div>
           </div>
         </div>
@@ -2129,7 +2328,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              We handle review removal on Google, Glassdoor, Avvo, Yelp, and Reddit. If you have a review on a platform not listed, contact us and we will assess whether we can help.
+              We handle review removal on Google, Glassdoor, Avvo, Yelp, Reddit, and Airbnb. If you have a review on a platform not listed, contact us and we will assess whether we can help.
             </div>
           </div>
         </div>
@@ -2177,7 +2376,7 @@
         <!-- Step 1 -->
         <div class="form-panel active" id="panel-1">
           <div class="form-panel-title">Which platform are the reviews on?</div>
-          <div class="form-panel-sub">Select all that apply. We handle Google, Glassdoor, Avvo, Yelp, and Reddit.</div>
+          <div class="form-panel-sub">Select all that apply. We handle Google, Glassdoor, Avvo, Yelp, Reddit, and Airbnb.</div>
 
           <div class="platform-chips" id="platform-chips">
             <button type="button" class="platform-chip" onclick="toggleChip(this)">Google</button>
@@ -2185,6 +2384,7 @@
             <button type="button" class="platform-chip" onclick="toggleChip(this)">Avvo</button>
             <button type="button" class="platform-chip" onclick="toggleChip(this)">Yelp</button>
             <button type="button" class="platform-chip" onclick="toggleChip(this)">Reddit</button>
+            <button type="button" class="platform-chip" onclick="toggleChip(this)">Airbnb</button>
           </div>
 
           <div class="form-row">
