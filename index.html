@@ -194,7 +194,10 @@
       background: rgba(15, 45, 82, 0.97);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, box-shadow 0.35s ease;
+    }
+    .nav.scrolled {
+      box-shadow: 0px 10px 60px rgba(3, 17, 44, 0.22);
     }
 
     .nav-inner {
@@ -390,9 +393,9 @@
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 60px;
+      gap: 56px;
       align-items: center;
-      padding: 80px 24px;
+      padding: 100px 24px 88px;
       max-width: 1160px;
       margin: 0 auto;
     }
@@ -400,7 +403,8 @@
     @media (min-width: 1024px) {
       .hero-inner {
         grid-template-columns: 1fr 1fr;
-        padding: 100px 24px;
+        gap: 72px;
+        padding: 120px 24px 100px;
       }
     }
 
@@ -415,7 +419,7 @@
       font-size: 13px;
       color: rgba(255,255,255,0.9);
       font-weight: 500;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .hero-badge-dot {
@@ -432,11 +436,12 @@
     }
 
     .hero-headline {
-      font-size: clamp(36px, 5vw, 60px);
+      font-size: clamp(38px, 5vw, 58px);
       font-weight: 700;
       color: white;
-      margin-bottom: 20px;
-      line-height: 1.1;
+      margin-bottom: 28px;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
     }
 
     .hero-headline em {
@@ -445,24 +450,27 @@
     }
 
     .hero-sub {
-      font-size: clamp(16px, 2vw, 19px);
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 36px;
-      max-width: 520px;
-      line-height: 1.65;
+      font-size: clamp(16px, 2vw, 18px);
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 40px;
+      max-width: 500px;
+      line-height: 1.7;
     }
 
     .hero-ctas {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 48px;
+      margin-bottom: 28px;
     }
 
     .hero-stats {
       display: flex;
       flex-wrap: wrap;
-      gap: 32px;
+      gap: 36px;
+      margin-top: 36px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.12);
     }
 
     .hero-stat {
@@ -473,15 +481,19 @@
 
     .hero-stat-value {
       font-family: var(--font-heading);
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 700;
       color: white;
+      line-height: 1;
     }
 
     .hero-stat-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      font-weight: 500;
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
     }
 
     /* Dashboard mockup */
@@ -656,7 +668,7 @@
 
     /* ===================== SECTION BASE ===================== */
     .section {
-      padding: 96px 0;
+      padding: 100px 0;
     }
 
     .section-label {
@@ -697,7 +709,7 @@
     /* ===================== PLATFORMS ===================== */
     .platforms {
       background: var(--gray-50);
-      padding: 72px 0;
+      padding: 88px 0;
     }
 
     .platforms-intro {
@@ -1580,18 +1592,18 @@
     /* ===================== SCROLL ANIMATIONS ===================== */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+    .reveal-delay-5 { transition-delay: 0.40s; }
 
     /* ===================== NAV CLIENT PORTAL ===================== */
     .nav-actions {
@@ -1718,29 +1730,14 @@
     .tc-track-wrap {
       position: relative;
       overflow: hidden;
-    }
-    .tc-track-wrap::before,
-    .tc-track-wrap::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 160px;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .tc-track-wrap::before {
-      left: 0;
-      background: linear-gradient(to right, var(--navy), transparent);
-    }
-    .tc-track-wrap::after {
-      right: 0;
-      background: linear-gradient(to left, var(--navy), transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     }
     .tc-track {
       display: flex;
-      gap: 20px;
-      padding: 10px 20px 24px;
-      animation: tc-scroll 48s linear infinite;
+      gap: 22px;
+      padding: 12px 20px 28px;
+      animation: tc-scroll 85s linear infinite;
       width: max-content;
     }
     @keyframes tc-scroll {
@@ -1749,14 +1746,19 @@
     }
     .tc-card {
       background: white;
-      border-radius: 16px;
-      padding: 26px;
-      width: 310px;
+      border-radius: 14px;
+      padding: 28px;
+      width: 320px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      gap: 16px;
+      box-shadow: 0px 20px 40px rgba(3, 17, 44, 0.18), 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0px 28px 56px rgba(3, 17, 44, 0.26), 0 2px 8px rgba(0,0,0,0.08);
     }
     .tc-card-stars { display: flex; gap: 2px; }
     .tc-card-star { font-size: 13px; color: #f59e0b; }
@@ -1815,29 +1817,14 @@
     .cs-track-wrap {
       position: relative;
       overflow: hidden;
-    }
-    .cs-track-wrap::before,
-    .cs-track-wrap::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .cs-track-wrap::before {
-      left: 0;
-      background: linear-gradient(to right, #081e38, transparent);
-    }
-    .cs-track-wrap::after {
-      right: 0;
-      background: linear-gradient(to left, #081e38, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
     }
     .cs-track {
       display: flex;
-      gap: 20px;
-      padding: 8px 40px 20px;
-      animation: cs-scroll 38s linear infinite;
+      gap: 22px;
+      padding: 8px 40px 24px;
+      animation: cs-scroll 55s linear infinite;
       width: max-content;
     }
     @keyframes cs-scroll {
@@ -1845,33 +1832,39 @@
       100% { transform: translateX(-50%); }
     }
     .cs-card {
-      width: 296px;
+      width: 300px;
       flex-shrink: 0;
       border-radius: 16px;
-      padding: 28px;
+      padding: 30px;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 256px;
+      min-height: 264px;
+      box-shadow: 0px 20px 40px rgba(0,0,0,0.35);
+      transition: transform 0.32s ease, box-shadow 0.32s ease;
+    }
+    .cs-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 30px 60px rgba(0,0,0,0.45);
     }
     .cs-card::before {
       content: '';
       position: absolute;
-      top: -40px; right: -40px;
-      width: 150px; height: 150px;
+      top: -50px; right: -50px;
+      width: 180px; height: 180px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.07);
       pointer-events: none;
     }
     .cs-card::after {
       content: '';
       position: absolute;
-      bottom: -50px; left: -30px;
-      width: 180px; height: 180px;
+      bottom: -60px; left: -30px;
+      width: 200px; height: 200px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.04);
       pointer-events: none;
     }
     .cs-bg-1 { background: linear-gradient(145deg, #1a4a7a, #2E86C1); }
@@ -1958,27 +1951,47 @@
     .trust-bar {
       background: white;
       border-bottom: 1px solid var(--gray-200);
-      padding: 14px 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      padding: 12px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .trust-bar::before,
+    .trust-bar::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .trust-bar::before {
+      left: 0;
+      background: linear-gradient(to right, white, transparent);
+    }
+    .trust-bar::after {
+      right: 0;
+      background: linear-gradient(to left, white, transparent);
     }
 
     .trust-bar-inner {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 10px;
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 24px;
+      width: max-content;
+      padding: 0 80px;
+      animation: trust-scroll 30s linear infinite;
+    }
+    @keyframes trust-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .trust-badge {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 7px 14px;
+      padding: 6px 14px;
       border-radius: 100px;
       font-size: 12px;
       font-weight: 700;
@@ -1986,6 +1999,7 @@
       background: var(--gray-50);
       color: var(--navy);
       border: 1.5px solid var(--gray-200);
+      flex-shrink: 0;
     }
 
     .trust-badge-dot {
@@ -2017,38 +2031,16 @@
 
     .marquee-wrapper {
       position: relative;
-    }
-
-    .marquee-wrapper::before,
-    .marquee-wrapper::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 120px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .marquee-wrapper::before {
-      left: 0;
-      background: linear-gradient(to right, white 0%, transparent 100%);
-    }
-
-    .marquee-wrapper::after {
-      right: 0;
-      background: linear-gradient(to left, white 0%, transparent 100%);
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
     }
 
     .marquee-track {
       display: flex;
       gap: 0;
-      animation: marquee-scroll 28s linear infinite;
+      animation: marquee-scroll 50s linear infinite;
       width: max-content;
-    }
-
-    .marquee-track:hover {
-      animation-play-state: paused;
     }
 
     @keyframes marquee-scroll {
@@ -2257,30 +2249,21 @@
   <!-- ===================== TRUST BADGES ===================== -->
   <div class="trust-bar">
     <div class="trust-bar-inner">
-      <div class="trust-badge">
-        <span class="trust-badge-dot"></span>
-        94% Success Rate
-      </div>
-      <div class="trust-badge">
-        <span class="trust-badge-dot"></span>
-        500+ Reviews Removed
-      </div>
-      <div class="trust-badge">
-        <span class="trust-badge-dot"></span>
-        Featured in Forbes and USA Today
-      </div>
-      <div class="trust-badge">
-        <span class="trust-badge-dot"></span>
-        No Results, No Charge Guarantee
-      </div>
-      <div class="trust-badge">
-        <span class="trust-badge-dot"></span>
-        12 Years in Business
-      </div>
-      <div class="trust-badge">
-        <span class="trust-badge-dot"></span>
-        Confidential and Secure
-      </div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>94% Success Rate</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>500+ Reviews Removed</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>Featured in Forbes and USA Today</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>No Results, No Charge Guarantee</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>12 Years in Business</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>Confidential and Secure</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>San Diego, CA</div>
+      <!-- duplicate for seamless loop -->
+      <div class="trust-badge"><span class="trust-badge-dot"></span>94% Success Rate</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>500+ Reviews Removed</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>Featured in Forbes and USA Today</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>No Results, No Charge Guarantee</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>12 Years in Business</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>Confidential and Secure</div>
+      <div class="trust-badge"><span class="trust-badge-dot"></span>San Diego, CA</div>
     </div>
   </div>
 
@@ -3357,15 +3340,24 @@
       el.classList.add('selected');
     }
 
-    // Scroll to top visibility
+    // Scroll-driven nav shadow + scroll-to-top visibility
     var scrollTopBtn = document.getElementById('scroll-top');
+    var navEl = document.getElementById('nav');
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 400) {
+      var y = window.scrollY;
+      // Nav shadow
+      if (y > 60) {
+        navEl.classList.add('scrolled');
+      } else {
+        navEl.classList.remove('scrolled');
+      }
+      // Scroll-to-top button
+      if (y > 400) {
         scrollTopBtn.classList.add('visible');
       } else {
         scrollTopBtn.classList.remove('visible');
       }
-    });
+    }, { passive: true });
 
     // Mobile menu
     function toggleMobileMenu() {
@@ -3403,7 +3395,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
       document.querySelectorAll('.reveal').forEach(function(el) {
         observer.observe(el);
