@@ -1736,7 +1736,7 @@
     }
     .tc-track {
       display: flex;
-      gap: 0;
+      gap: 22px;
       padding: 12px 0 28px;
       width: max-content;
       will-change: transform;
@@ -1756,7 +1756,6 @@
       padding: 28px;
       width: 320px;
       flex-shrink: 0;
-      margin-right: 22px;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -1830,7 +1829,7 @@
     }
     .cs-track {
       display: flex;
-      gap: 0;
+      gap: 22px;
       padding: 8px 0 24px;
       width: max-content;
       will-change: transform;
@@ -1847,7 +1846,6 @@
     .cs-card {
       width: 300px;
       flex-shrink: 0;
-      margin-right: 22px;
       border-radius: 16px;
       padding: 30px;
       position: relative;
@@ -1975,7 +1973,7 @@
       display: flex;
       align-items: center;
       flex-wrap: nowrap;
-      gap: 0;
+      gap: 10px;
       width: max-content;
       padding: 0;
       will-change: transform;
@@ -2003,7 +2001,6 @@
       color: var(--navy);
       border: 1.5px solid var(--gray-200);
       flex-shrink: 0;
-      margin-right: 10px;
     }
 
     .trust-badge-dot {
@@ -3451,6 +3448,37 @@
 
       counters.forEach(function(el) { countObserver.observe(el); });
     })();
+
+    // Pixel-exact carousel loop calculation
+    document.addEventListener('DOMContentLoaded', function() {
+      function fixCarousel(trackSelector, duration) {
+        var track = document.querySelector(trackSelector);
+        if (!track) return;
+        var items = track.children;
+        var halfCount = Math.floor(items.length / 2);
+        var halfWidth = 0;
+        for (var i = 0; i < halfCount; i++) {
+          var style = window.getComputedStyle(items[i]);
+          halfWidth += items[i].offsetWidth +
+            parseInt(style.marginRight || 0) +
+            parseInt(style.marginLeft || 0);
+        }
+        var trackStyle = window.getComputedStyle(track);
+        var gap = parseInt(trackStyle.gap || trackStyle.columnGap || 0);
+        halfWidth += gap * (halfCount - 1);
+        var name = 'scroll' + trackSelector.replace(/[^a-z0-9]/gi, '');
+        var styleEl = document.createElement('style');
+        styleEl.textContent = '@keyframes ' + name +
+          ' { 0% { transform: translateX(0); } 100% { transform: translateX(-' + halfWidth + 'px); } }';
+        document.head.appendChild(styleEl);
+        track.style.animation = name + ' ' + duration + 's linear infinite';
+      }
+
+      fixCarousel('.cs-track', 40);
+      fixCarousel('.tc-track', 35);
+      fixCarousel('.marquee-track', 25);
+      fixCarousel('.trust-bar-inner', 20);
+    });
   </script>
 </body>
 </html>
