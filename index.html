@@ -1730,20 +1730,25 @@
     .tc-track-wrap {
       overflow: hidden;
       width: 100%;
+      padding: 0;
+      margin: 0;
+      position: relative;
     }
     .tc-track {
       display: flex;
-      gap: 22px;
+      gap: 0;
       padding: 12px 0 28px;
       width: max-content;
+      will-change: transform;
       animation: tc-scroll 85s linear infinite;
+      animation-delay: 0s;
     }
     .tc-track:hover {
       animation-play-state: paused;
     }
     @keyframes tc-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .tc-card {
       background: white;
@@ -1751,6 +1756,7 @@
       padding: 28px;
       width: 320px;
       flex-shrink: 0;
+      margin-right: 22px;
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -1818,24 +1824,30 @@
     .cs-track-wrap {
       overflow: hidden;
       width: 100%;
+      padding: 0;
+      margin: 0;
+      position: relative;
     }
     .cs-track {
       display: flex;
-      gap: 22px;
+      gap: 0;
       padding: 8px 0 24px;
       width: max-content;
+      will-change: transform;
       animation: cs-scroll 55s linear infinite;
+      animation-delay: 0s;
     }
     .cs-track:hover {
       animation-play-state: paused;
     }
     @keyframes cs-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .cs-card {
       width: 300px;
       flex-shrink: 0;
+      margin-right: 22px;
       border-radius: 16px;
       padding: 30px;
       position: relative;
@@ -1956,22 +1968,26 @@
       padding: 12px 0;
       overflow: hidden;
       width: 100%;
+      margin: 0;
+      position: relative;
     }
     .trust-bar-inner {
       display: flex;
       align-items: center;
       flex-wrap: nowrap;
-      gap: 10px;
+      gap: 0;
       width: max-content;
       padding: 0;
+      will-change: transform;
       animation: trust-scroll 30s linear infinite;
+      animation-delay: 0s;
     }
     .trust-bar-inner:hover {
       animation-play-state: paused;
     }
     @keyframes trust-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .trust-badge {
@@ -1987,6 +2003,7 @@
       color: var(--navy);
       border: 1.5px solid var(--gray-200);
       flex-shrink: 0;
+      margin-right: 10px;
     }
 
     .trust-badge-dot {
@@ -2019,21 +2036,26 @@
     .marquee-wrapper {
       overflow: hidden;
       width: 100%;
+      padding: 0;
+      margin: 0;
+      position: relative;
     }
 
     .marquee-track {
       display: flex;
       gap: 0;
       width: max-content;
+      will-change: transform;
       animation: marquee-scroll 50s linear infinite;
+      animation-delay: 0s;
     }
     .marquee-track:hover {
       animation-play-state: paused;
     }
 
     @keyframes marquee-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .marquee-item {
