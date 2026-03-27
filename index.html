@@ -1728,21 +1728,22 @@
       color: rgba(255,255,255,0.85);
     }
     .tc-track-wrap {
-      position: relative;
       overflow: hidden;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      width: 100%;
     }
     .tc-track {
       display: flex;
       gap: 22px;
       padding: 12px 0 28px;
-      animation: tc-scroll 85s linear infinite;
       width: max-content;
+      animation: tc-scroll 85s linear infinite;
+    }
+    .tc-track:hover {
+      animation-play-state: paused;
     }
     @keyframes tc-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
     .tc-card {
       background: white;
@@ -1815,21 +1816,22 @@
       padding: 0 24px;
     }
     .cs-track-wrap {
-      position: relative;
       overflow: hidden;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      width: 100%;
     }
     .cs-track {
       display: flex;
       gap: 22px;
       padding: 8px 0 24px;
-      animation: cs-scroll 55s linear infinite;
       width: max-content;
+      animation: cs-scroll 55s linear infinite;
+    }
+    .cs-track:hover {
+      animation-play-state: paused;
     }
     @keyframes cs-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
     .cs-card {
       width: 300px;
@@ -1953,26 +1955,8 @@
       border-bottom: 1px solid var(--gray-200);
       padding: 12px 0;
       overflow: hidden;
-      position: relative;
+      width: 100%;
     }
-    .trust-bar::before,
-    .trust-bar::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .trust-bar::before {
-      left: 0;
-      background: linear-gradient(to right, white, transparent);
-    }
-    .trust-bar::after {
-      right: 0;
-      background: linear-gradient(to left, white, transparent);
-    }
-
     .trust-bar-inner {
       display: flex;
       align-items: center;
@@ -1982,9 +1966,12 @@
       padding: 0;
       animation: trust-scroll 30s linear infinite;
     }
+    .trust-bar-inner:hover {
+      animation-play-state: paused;
+    }
     @keyframes trust-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     .trust-badge {
@@ -2030,22 +2017,23 @@
     }
 
     .marquee-wrapper {
-      position: relative;
       overflow: hidden;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      width: 100%;
     }
 
     .marquee-track {
       display: flex;
       gap: 0;
-      animation: marquee-scroll 50s linear infinite;
       width: max-content;
+      animation: marquee-scroll 50s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
     }
 
     @keyframes marquee-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     .marquee-item {
