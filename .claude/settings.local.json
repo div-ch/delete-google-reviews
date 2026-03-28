@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open:*)",
+      "Bash(curl -sL https://removify.com)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(grep -oE 'padding:[^;\"\"\"\"]{1,60}|margin:[^;\"\"\"\"]{1,60}|font-size:[^;\"\"\"\"]{1,40}|line-height:[^;\"\"\"\"]{1,30}' /tmp/removify.html)",
+      "Bash(grep -oE 'padding-top:[^;\"\"\"\"]{1,30}|padding-bottom:[^;\"\"\"\"]{1,30}|section[^{]{0,40}\\\\{[^}]{0,200}' /tmp/removify.html)",
+      "Bash(grep -oE 'hero[^{]{0,30}\\\\{[^}]{0,300}' /tmp/removify.html)",
+      "Bash(sed -n '2137,2160p' index.html)",
+      "Bash(sed -n '2284,2295p' index.html)",
+      "Bash(sed -n '2362,2380p' index.html)",
+      "Bash(sed -n '2408,2420p' index.html)"
+    ]
+  }
+}

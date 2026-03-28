@@ -37,6 +37,12 @@ Navy (#0F2D52) to sky blue (#2E86C1) gradient background.
 - Single index.html file
 - No build step, no frameworks, no dependencies beyond Google Fonts
 
+## Animation
+
+- Always use the Motion library for animations in all web projects
+- For projects with a build step: npm install motion
+- For this project (no build step): load Motion via CDN script tag
+
 ## Writing Rules
 
 - No em dashes anywhere in copy or code comments
