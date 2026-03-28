@@ -1593,17 +1593,22 @@
     .reveal {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    /* Hero entrance - hidden until Motion animates in */
+    .hero-badge,
+    .hero-headline,
+    .hero-sub,
+    .hero-ctas,
+    .hero-awards,
+    .hero-stats {
+      opacity: 0;
     }
-    .reveal-delay-1 { transition-delay: 0.08s; }
-    .reveal-delay-2 { transition-delay: 0.16s; }
-    .reveal-delay-3 { transition-delay: 0.24s; }
-    .reveal-delay-4 { transition-delay: 0.32s; }
-    .reveal-delay-5 { transition-delay: 0.40s; }
+
+    /* Reason cards - hidden until Motion animates in */
+    .reason-card {
+      opacity: 0;
+    }
 
     /* ===================== NAV CLIENT PORTAL ===================== */
     .nav-actions {
@@ -1740,15 +1745,6 @@
       padding: 12px 0 28px;
       width: max-content;
       will-change: transform;
-      animation: tc-scroll 85s linear infinite;
-      animation-delay: 0s;
-    }
-    .tc-track:hover {
-      animation-play-state: paused;
-    }
-    @keyframes tc-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
     .tc-card {
       background: white;
@@ -1833,15 +1829,6 @@
       padding: 8px 0 24px;
       width: max-content;
       will-change: transform;
-      animation: cs-scroll 55s linear infinite;
-      animation-delay: 0s;
-    }
-    .cs-track:hover {
-      animation-play-state: paused;
-    }
-    @keyframes cs-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
     .cs-card {
       width: 300px;
@@ -1977,15 +1964,6 @@
       width: max-content;
       padding: 0;
       will-change: transform;
-      animation: trust-scroll 30s linear infinite;
-      animation-delay: 0s;
-    }
-    .trust-bar-inner:hover {
-      animation-play-state: paused;
-    }
-    @keyframes trust-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
 
     .trust-badge {
@@ -2043,16 +2021,6 @@
       gap: 0;
       width: max-content;
       will-change: transform;
-      animation: marquee-scroll 50s linear infinite;
-      animation-delay: 0s;
-    }
-    .marquee-track:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes marquee-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
     }
 
     .marquee-item {
@@ -2099,6 +2067,7 @@
       margin-bottom: 28px;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
 </head>
 <body>
 
@@ -3393,92 +3362,112 @@
       document.getElementById('nav').appendChild(menu);
     }
 
-    // ===================== SCROLL REVEAL (IntersectionObserver) =====================
+    // ===================== MOTION ANIMATIONS =====================
     (function() {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      if (typeof Motion === 'undefined') return;
+      var animate = Motion.animate;
+      var inView  = Motion.inView;
+      var stagger = Motion.stagger;
 
-      document.querySelectorAll('.reveal').forEach(function(el) {
-        observer.observe(el);
+      // --- Carousel helper ---
+      function setupCarousel(selector, duration) {
+        var track = document.querySelector(selector);
+        if (!track) return;
+        track.style.animation = 'none';
+        var items = track.children;
+        var halfCount = Math.floor(items.length / 2);
+        var halfWidth = 0;
+        for (var i = 0; i < halfCount; i++) {
+          var s = window.getComputedStyle(items[i]);
+          halfWidth += items[i].offsetWidth
+            + (parseFloat(s.marginLeft) || 0)
+            + (parseFloat(s.marginRight) || 0);
+        }
+        var gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+        halfWidth += gap * (halfCount - 1);
+        var anim = animate(track,
+          { x: [0, -halfWidth] },
+          { duration: duration, easing: 'linear', repeat: Infinity }
+        );
+        var wrap = track.parentElement;
+        wrap.addEventListener('mouseenter', function() { anim.pause(); });
+        wrap.addEventListener('mouseleave', function() { anim.play(); });
+      }
+
+      // --- Hero entrance ---
+      var heroSelectors = [
+        '.hero-badge', '.hero-headline', '.hero-sub',
+        '.hero-ctas', '.hero-awards', '.hero-stats'
+      ];
+      heroSelectors.forEach(function(sel, i) {
+        var el = document.querySelector(sel);
+        if (!el) return;
+        animate(el,
+          { opacity: [0, 1], transform: ['translateY(28px)', 'translateY(0px)'] },
+          { duration: 0.9, easing: [0.16, 1, 0.3, 1], delay: i * 0.11 }
+        );
       });
-    })();
 
-    // ===================== COUNT-UP ANIMATION =====================
-    (function() {
-      var counters = document.querySelectorAll('[data-count]');
-      if (!counters.length) return;
+      // --- Scroll reveals ---
+      var delayMap = { 'reveal-delay-1': 0.08, 'reveal-delay-2': 0.16,
+                       'reveal-delay-3': 0.24, 'reveal-delay-4': 0.32,
+                       'reveal-delay-5': 0.40 };
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        var delay = 0;
+        Object.keys(delayMap).forEach(function(cls) {
+          if (el.classList.contains(cls)) delay = delayMap[cls];
+        });
+        inView(el, function() {
+          animate(el,
+            { opacity: [0, 1], transform: ['translateY(24px)', 'translateY(0px)'] },
+            { duration: 0.72, easing: [0.16, 1, 0.3, 1], delay: delay }
+          );
+        }, { margin: '0px 0px -40px 0px' });
+      });
 
-      var countObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (!entry.isIntersecting) return;
-          var el = entry.target;
+      // --- Reason cards stagger ---
+      var reasonsGrid = document.querySelector('.reasons-grid');
+      if (reasonsGrid) {
+        inView(reasonsGrid, function() {
+          animate(
+            reasonsGrid.querySelectorAll('.reason-card'),
+            { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0px)'] },
+            { duration: 0.55, easing: [0.16, 1, 0.3, 1], delay: stagger(0.08) }
+          );
+        }, { margin: '0px 0px -60px 0px' });
+      }
+
+      // --- Count-up on hero stats ---
+      document.querySelectorAll('[data-count]').forEach(function(el) {
+        inView(el, function() {
           var target = parseInt(el.getAttribute('data-count'), 10);
           var suffix = el.getAttribute('data-suffix') || '';
           var prefix = el.getAttribute('data-prefix') || '';
           var duration = 1600;
           var start = null;
-
           function step(ts) {
             if (!start) start = ts;
             var progress = Math.min((ts - start) / duration, 1);
             var eased = 1 - Math.pow(1 - progress, 3);
             var current = Math.round(eased * target);
-            var display = current >= 1000
-              ? (Math.floor(current / 100) / 10).toFixed(1).replace(/\.0$/, '') + ',000'
-              : current;
-            if (target === 1200) {
-              display = current >= 1000
-                ? '1,' + String(current - 1000).padStart(3, '0')
-                : String(current);
-            }
+            var display = (target === 1200 && current >= 1000)
+              ? '1,' + String(current - 1000).padStart(3, '0')
+              : (current >= 1000
+                  ? (Math.floor(current / 100) / 10).toFixed(1).replace(/\.0$/, '') + ',000'
+                  : String(current));
             el.textContent = prefix + display + suffix;
             if (progress < 1) requestAnimationFrame(step);
           }
-
           requestAnimationFrame(step);
-          countObserver.unobserve(el);
-        });
-      }, { threshold: 0.5 });
+        }, { margin: '0px 0px -40px 0px' });
+      });
 
-      counters.forEach(function(el) { countObserver.observe(el); });
+      // --- Carousels ---
+      setupCarousel('.cs-track', 40);
+      setupCarousel('.tc-track', 35);
+      setupCarousel('.marquee-track', 25);
+      setupCarousel('.trust-bar-inner', 20);
     })();
-
-    // Pixel-exact carousel loop calculation
-    document.addEventListener('DOMContentLoaded', function() {
-      function fixCarousel(trackSelector, duration) {
-        var track = document.querySelector(trackSelector);
-        if (!track) return;
-        var items = track.children;
-        var halfCount = Math.floor(items.length / 2);
-        var halfWidth = 0;
-        for (var i = 0; i < halfCount; i++) {
-          var style = window.getComputedStyle(items[i]);
-          halfWidth += items[i].offsetWidth +
-            parseInt(style.marginRight || 0) +
-            parseInt(style.marginLeft || 0);
-        }
-        var trackStyle = window.getComputedStyle(track);
-        var gap = parseInt(trackStyle.gap || trackStyle.columnGap || 0);
-        halfWidth += gap * (halfCount - 1);
-        var name = 'scroll' + trackSelector.replace(/[^a-z0-9]/gi, '');
-        var styleEl = document.createElement('style');
-        styleEl.textContent = '@keyframes ' + name +
-          ' { 0% { transform: translateX(0); } 100% { transform: translateX(-' + halfWidth + 'px); } }';
-        document.head.appendChild(styleEl);
-        track.style.animation = name + ' ' + duration + 's linear infinite';
-      }
-
-      fixCarousel('.cs-track', 40);
-      fixCarousel('.tc-track', 35);
-      fixCarousel('.marquee-track', 25);
-      fixCarousel('.trust-bar-inner', 20);
-    });
   </script>
 </body>
 </html>
