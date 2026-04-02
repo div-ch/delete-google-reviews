@@ -3073,8 +3073,8 @@
 
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="business-name">Business Name</label>
-              <input type="text" class="form-input" id="business-name" placeholder="Your Business Name" />
+              <label class="form-label" for="review-url">Review Page URL (optional)</label>
+              <input type="url" class="form-input" id="review-url" placeholder="e.g. google.com/maps/place/your-business" />
             </div>
           </div>
 
@@ -3292,8 +3292,8 @@
         document.getElementById('email').value : '';
       var phone = document.getElementById('phone') ?
         document.getElementById('phone').value : '';
-      var business = document.getElementById('business-name') ?
-        document.getElementById('business-name').value : '';
+      var reviewPageUrl = document.getElementById('review-url') ?
+        document.getElementById('review-url').value : '';
       var situation = document.getElementById('situation') ?
         document.getElementById('situation').value : '';
       var budget = '';
@@ -3323,7 +3323,7 @@
         lastName: lname,
         email: email,
         phone: phone,
-        businessName: business,
+        reviewPageUrl: reviewPageUrl,
         clientType: clientType,
         services: selectedServices.join(', '),
         situation: situation,
