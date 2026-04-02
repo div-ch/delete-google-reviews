@@ -1400,45 +1400,6 @@
       color: var(--blue);
     }
 
-    .urgency-options {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .urgency-option {
-      border: 1.5px solid var(--gray-200);
-      border-radius: 10px;
-      padding: 14px;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-family: var(--font-body);
-      background: white;
-      text-align: left;
-    }
-
-    .urgency-option.selected {
-      border-color: var(--navy);
-      background: #eff6ff;
-    }
-
-    .urgency-option:hover:not(.selected) {
-      border-color: var(--blue);
-    }
-
-    .urgency-option-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 2px;
-    }
-
-    .urgency-option-sub {
-      font-size: 11px;
-      color: var(--gray-400);
-    }
-
     .form-nav {
       display: flex;
       justify-content: space-between;
@@ -3080,25 +3041,6 @@
             <textarea class="form-textarea" id="situation" placeholder="Example: I believe these are fake reviews from a competitor. Several were posted in a short window and the accounts have no other activity."></textarea>
           </div>
 
-          <div class="form-panel-sub" style="margin-bottom: 12px; font-size: 13px; font-weight: 600; color: var(--gray-800);">How urgently do you need this handled?</div>
-          <div class="urgency-options" id="urgency-options">
-            <button type="button" class="urgency-option" onclick="selectUrgency(this)">
-              <div class="urgency-option-title">Standard</div>
-              <div class="urgency-option-sub">Within 30 days</div>
-            </button>
-            <button type="button" class="urgency-option" onclick="selectUrgency(this)">
-              <div class="urgency-option-title">Expedited</div>
-              <div class="urgency-option-sub">Within 14 days</div>
-            </button>
-            <button type="button" class="urgency-option" onclick="selectUrgency(this)">
-              <div class="urgency-option-title">Urgent</div>
-              <div class="urgency-option-sub">Immediate attention</div>
-            </button>
-            <button type="button" class="urgency-option" onclick="selectUrgency(this)">
-              <div class="urgency-option-title">Flexible</div>
-              <div class="urgency-option-sub">No specific timeline</div>
-            </button>
-          </div>
 
           <div class="form-nav">
             <button type="button" class="btn-back" onclick="prevStep(2)">Back</button>
@@ -3375,10 +3317,6 @@
         selectedServices.push(btn.textContent.trim());
       });
 
-      var urgency = '';
-      var urgencyTitle = document.querySelector('.urgency-option.selected .urgency-option-title');
-      if (urgencyTitle) urgency = urgencyTitle.textContent.trim();
-
       var payload = {
         timestamp: new Date().toISOString(),
         firstName: fname,
@@ -3388,7 +3326,6 @@
         businessName: business,
         clientType: clientType,
         services: selectedServices.join(', '),
-        urgency: urgency,
         situation: situation,
         budget: budget,
         source: window.location.href
@@ -3424,13 +3361,6 @@
       el.classList.toggle('selected');
     }
 
-    // Urgency option selection
-    function selectUrgency(el) {
-      document.querySelectorAll('.urgency-option').forEach(function(o) {
-        o.classList.remove('selected');
-      });
-      el.classList.add('selected');
-    }
 
     // Scroll-driven nav shadow + scroll-to-top visibility
     var scrollTopBtn = document.getElementById('scroll-top');
