@@ -1,0 +1,16 @@
+<svg width="280" height="48" viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A5276"/>
+      <stop offset="100%" stop-color="#2E86C1"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield icon -->
+  <path d="M20 3L5 9v10c0 8.5 6 15.4 15 17.4C29 34.4 35 27.5 35 19V9L20 3z" fill="url(#sg)"/>
+  <path d="M14 19l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30" cy="11" r="5.5" fill="#E8470A"/>
+  <path d="M27.5 11h5M30 8.5v5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Wordmark -->
+  <text x="46" y="28" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#0F2D52" letter-spacing="-0.3">DeleteGoogleReviews.com</text>
+  <text x="46" y="41" font-family="Arial, sans-serif" font-size="10" fill="#2E86C1" letter-spacing="0.5">INDEPENDENT REVIEW REMOVAL EXPERTS</text>
+</svg>

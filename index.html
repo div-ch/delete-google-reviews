@@ -259,18 +259,8 @@
       gap: 10px;
     }
 
-    .nav-logo-mark {
-      width: 36px;
-      height: 36px;
-      background: linear-gradient(135deg, var(--blue), #5DADE2);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      color: white;
-      font-size: 18px;
+    .nav-logo svg {
+      flex-shrink: 0;
     }
 
     .nav-logo-text {
@@ -2119,7 +2109,18 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <div class="nav-logo-mark">D</div>
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="shieldGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1A5276"/>
+              <stop offset="100%" stop-color="#2E86C1"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2L4 8v10c0 8.5 6 16.4 14 18.4C26 34.4 32 26.5 32 18V8L18 2z" fill="url(#shieldGrad)"/>
+          <path d="M12 18l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="26" cy="10" r="5" fill="#E8470A"/>
+          <path d="M24 10h4M26 8v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
         <div class="nav-logo-text">
           DeleteGoogleReviews.com
           <span class="nav-logo-sub">Independent Review Removal Experts</span>
@@ -3168,7 +3169,18 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="nav-logo">
-            <div class="nav-logo-mark">D</div>
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="shieldGradFooter" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#1A5276"/>
+                  <stop offset="100%" stop-color="#2E86C1"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 2L4 8v10c0 8.5 6 16.4 14 18.4C26 34.4 32 26.5 32 18V8L18 2z" fill="url(#shieldGradFooter)"/>
+              <path d="M12 18l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="26" cy="10" r="5" fill="#E8470A"/>
+              <path d="M24 10h4M26 8v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
             <div class="nav-logo-text" style="color: white;">
               DeleteGoogleReviews.com
               <span class="nav-logo-sub">San Diego, CA, USA</span>
