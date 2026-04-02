@@ -3331,24 +3331,80 @@
     }
 
     function submitForm() {
-      var name = document.getElementById('full-name').value.trim();
-      var email = document.getElementById('email').value.trim();
+      var fname = document.getElementById('full-name') ?
+        document.getElementById('full-name').value : '';
+      var lname = '';
+      var email = document.getElementById('email') ?
+        document.getElementById('email').value : '';
+      var phone = document.getElementById('phone') ?
+        document.getElementById('phone').value : '';
+      var business = document.getElementById('business-name') ?
+        document.getElementById('business-name').value : '';
+      var situation = document.getElementById('situation') ?
+        document.getElementById('situation').value : '';
+      var budget = '';
+      var clientType = '';
 
-      if (!name || !email) {
+      if (!email || !fname) {
         alert('Please enter your name and email to continue.');
         return;
       }
 
-      // Hide step 3
-      document.getElementById('panel-3').classList.remove('active');
+      var submitBtn = document.querySelector('.form-nav .btn-orange');
+      if (submitBtn) {
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+      }
 
-      // Update dots
-      document.getElementById('dot-3').className = 'form-step-dot completed';
-      document.getElementById('dot-3').innerHTML = checkSvg();
-      document.getElementById('line-2').classList.add('completed');
+      var SHEET_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
 
-      // Show success
-      document.getElementById('form-success').classList.add('visible');
+      var selectedServices = [];
+      document.querySelectorAll('.platform-chip.selected').forEach(function(btn) {
+        selectedServices.push(btn.textContent.trim());
+      });
+
+      var urgency = '';
+      var urgencyTitle = document.querySelector('.urgency-option.selected .urgency-option-title');
+      if (urgencyTitle) urgency = urgencyTitle.textContent.trim();
+
+      var payload = {
+        timestamp: new Date().toISOString(),
+        firstName: fname,
+        lastName: lname,
+        email: email,
+        phone: phone,
+        businessName: business,
+        clientType: clientType,
+        services: selectedServices.join(', '),
+        urgency: urgency,
+        situation: situation,
+        budget: budget,
+        source: window.location.href
+      };
+
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function() {
+        showSuccessState();
+      }).catch(function() {
+        showSuccessState();
+      });
+    }
+
+    function showSuccessState() {
+      ['panel-1', 'panel-2', 'panel-3'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      var indicator = document.querySelector('.form-steps-indicator');
+      if (indicator) indicator.style.display = 'none';
+      var labels = document.querySelector('.form-step-labels');
+      if (labels) labels.style.display = 'none';
+      var success = document.getElementById('form-success');
+      if (success) success.style.display = 'block';
     }
 
     // Platform chip toggle
