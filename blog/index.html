@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Review Removal Blog | Tips, Guides and Case Studies</title>
+  <meta name="description" content="Expert guides on Google review removal, fake review detection, and protecting your business reputation online." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://deletegooglereviews.com/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://deletegooglereviews.com/blog/" />
+  <meta property="og:title" content="Google Review Removal Blog | Tips, Guides and Case Studies" />
+  <meta property="og:description" content="Expert guides on Google review removal, fake review detection, and protecting your business reputation online." />
+  <meta property="og:image" content="https://deletegooglereviews.com/og-review-removal.jpg" />
+  <meta property="og:site_name" content="DeleteGoogleReviews.com" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Google Review Removal Blog | Tips, Guides and Case Studies" />
+  <meta name="twitter:description" content="Expert guides on Google review removal, fake review detection, and protecting your business reputation online." />
+  <meta name="twitter:image" content="https://deletegooglereviews.com/og-review-removal.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #0F2D52;
+      --blue: #2E86C1;
+      --orange: #E8470A;
+      --orange-dark: #C93D09;
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --gray-600: #475569;
+      --gray-800: #1E293B;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Fraunces', serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-800);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      line-height: 1.2;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(15, 45, 82, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s ease, box-shadow 0.35s ease;
+    }
+    .nav.scrolled { box-shadow: 0px 10px 60px rgba(3, 17, 44, 0.22); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo svg { flex-shrink: 0; }
+    .nav-logo-text {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      color: white;
+      font-size: 17px;
+      line-height: 1.2;
+    }
+    .nav-logo-sub {
+      font-family: var(--font-body);
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 400;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-links a.active { color: white; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-orange { background: var(--orange); color: white; }
+    .btn-orange:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(232, 71, 10, 0.35);
+    }
+    .btn-sm { padding: 10px 18px; font-size: 13px; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-nav-portal {
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .btn-nav-portal:hover { color: white; }
+
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .nav-cta { display: none !important; }
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a4a7a 45%, var(--blue) 100%);
+      padding: 140px 24px 80px;
+      text-align: center;
+    }
+    .page-header-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .page-header h1 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .page-header p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* BLOG GRID */
+    .blog-section {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 640px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .blog-card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(15, 45, 82, 0.12);
+    }
+    .blog-card-tag {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+    }
+    .blog-card h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+    }
+    .blog-card p {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--orange);
+      transition: gap 0.2s;
+    }
+    .blog-card-link:hover { gap: 10px; }
+
+    /* CTA BAND */
+    .cta-band {
+      background: var(--navy);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .cta-band h2 {
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .cta-band p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-lg { padding: 16px 32px; font-size: 16px; }
+
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      padding: 64px 0 32px;
+      color: rgba(255,255,255,0.8);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    @media (min-width: 640px) {
+      .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    }
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      margin-top: 12px;
+      max-width: 320px;
+    }
+    .footer-col-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: white; }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 28px;
+    }
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.8); }
+    .footer-awards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .footer-award-chip {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 4px 12px;
+    }
+    .footer-social-row { display: flex; gap: 10px; }
+    .footer-social-link {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .footer-social-link:hover {
+      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 50;
+    }
+    .scroll-top.visible { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="shieldGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#1A5276"/>
+              <stop offset="100%" stop-color="#2E86C1"/>
+            </linearGradient>
+          </defs>
+          <path d="M18 2L4 8v10c0 8.5 6 16.4 14 18.4C26 34.4 32 26.5 32 18V8L18 2z" fill="url(#shieldGrad)"/>
+          <path d="M12 18l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="26" cy="10" r="5" fill="#E8470A"/>
+          <path d="M24 10h4M26 8v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="nav-logo-text">
+          DeleteGoogleReviews.com
+          <span class="nav-logo-sub">Independent Review Removal Experts</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+        <li><a href="/blog/" class="active">Blog</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="/#intake-form" class="btn-nav-portal">Client Portal</a>
+        <a href="/#intake-form" class="btn btn-orange btn-sm">Get a Free Quote</a>
+      </div>
+      <button class="nav-mobile-toggle" aria-label="Open menu" onclick="this.closest('nav').querySelector('.nav-links').style.display = this.closest('nav').querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <rect y="4" width="22" height="2" rx="1" fill="white"/>
+          <rect y="10" width="22" height="2" rx="1" fill="white"/>
+          <rect y="16" width="22" height="2" rx="1" fill="white"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-label">Resources</div>
+    <h1>Google Review Removal Blog</h1>
+    <p>Expert guides, industry insights, and practical advice for businesses protecting their online reputation.</p>
+  </div>
+
+  <!-- BLOG GRID -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-grid">
+
+        <article class="blog-card">
+          <div class="blog-card-tag">Guide</div>
+          <h2>How to Remove a Fake Google Review in 2026: The Complete Guide</h2>
+          <p>Fake reviews are a growing problem for businesses of every size. This guide covers what qualifies as a fake review under Google's policies, the self-flagging process, why Google often ignores reports, and when professional removal is the right call.</p>
+          <a href="/blog/how-to-remove-fake-google-review.html" class="blog-card-link">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-tag">Law Firms</div>
+          <h2>Google Review Removal for Law Firms: Protect Your Practice</h2>
+          <p>Attorneys face unique challenges with negative reviews. Opposing parties, disgruntled former clients, and people who never hired the firm can all leave damaging content. Learn how bar ethics rules affect how attorneys can respond, and why removal is often the better path.</p>
+          <a href="/blog/google-review-removal-for-law-firms.html" class="blog-card-link">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-tag">Medical Practices</div>
+          <h2>Google Review Removal for Doctors and Medical Practices</h2>
+          <p>HIPAA prevents doctors from confirming or denying a patient relationship in public responses, making fake and unfair reviews especially damaging. This guide covers the constraints, the review types that qualify for removal, and how medical practices can protect their reputation without violating privacy law.</p>
+          <a href="/blog/google-review-removal-for-doctors.html" class="blog-card-link">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-tag">FAQ</div>
+          <h2>Can You Delete a Google Review? What Business Owners Need to Know</h2>
+          <p>The short answer: business owners cannot delete reviews themselves. Only Google can remove them. But understanding what "removal" actually means, what qualifies, and the difference between doing it yourself and hiring a professional changes the picture significantly.</p>
+          <a href="/blog/can-you-delete-a-google-review.html" class="blog-card-link">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-tag">Timelines</div>
+          <h2>How Long Does It Take to Remove a Google Review?</h2>
+          <p>Timelines vary significantly depending on whether you flag a review yourself or use a professional service. Self-flagging can take weeks with no response. Professional removal typically runs 3 to 14 business days. This guide explains what drives the timeline and what to do while you wait.</p>
+          <a href="/blog/how-long-to-remove-google-review.html" class="blog-card-link">
+            Read Article
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Have a Damaging Review Right Now?</h2>
+      <p>Get a free case evaluation. We will review your situation and tell you honestly whether the review qualifies for removal.</p>
+      <a href="/#intake-form" class="btn btn-orange btn-lg">Get a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="shieldGradFooter" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#1A5276"/>
+                  <stop offset="100%" stop-color="#2E86C1"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 2L4 8v10c0 8.5 6 16.4 14 18.4C26 34.4 32 26.5 32 18V8L18 2z" fill="url(#shieldGradFooter)"/>
+              <path d="M12 18l4 4 8-8" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="26" cy="10" r="5" fill="#E8470A"/>
+              <path d="M24 10h4M26 8v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <div class="nav-logo-text" style="color: white;">
+              DeleteGoogleReviews.com
+              <span class="nav-logo-sub">San Diego, CA, USA</span>
+            </div>
+          </div>
+          <p>The trusted service for businesses that need negative Google reviews removed fast. Pay only for results.</p>
+          <div class="footer-social-row" style="margin-top:20px;">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                <rect x="1" y="1" width="15" height="15" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/>
+                <path d="M4 6.5v6M4 4.5v.5M7.5 12.5V9c0-1 .6-2 2-2s2 1 2 2v3.5M7.5 6.5v6" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                <rect x="1" y="1" width="15" height="15" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/>
+                <path d="M10 5.5H9a1.5 1.5 0 00-1.5 1.5v1H6v2h1.5v4H10v-4h1.5L12 8H10V7a.5.5 0 01.5-.5H12V5.5H10z" fill="rgba(255,255,255,0.6)"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                <rect x="1" y="1" width="15" height="15" rx="4" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/>
+                <circle cx="8.5" cy="8.5" r="2.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/>
+                <circle cx="12" cy="5" r="0.75" fill="rgba(255,255,255,0.6)"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="X">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                <rect x="1" y="1" width="15" height="15" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/>
+                <path d="M4.5 4.5L9 8.5M12.5 4.5L9 8.5M9 8.5L4.5 12.5M9 8.5L12.5 12.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="/#how-it-works">How It Works</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#intake-form">Free Consultation</a></li>
+            <li><a href="/glassdoor-review-removal/">Glassdoor Removal</a></li>
+            <li><a href="/yelp-review-removal/">Yelp Removal</a></li>
+            <li><a href="/avvo-review-removal/">Avvo Removal</a></li>
+            <li><a href="/reddit-post-removal/">Reddit Removal</a></li>
+            <li><a href="/airbnb-review-removal/">Airbnb Removal</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links">
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/blog/how-to-remove-fake-google-review.html">How to Remove a Fake Google Review</a></li>
+            <li><a href="/blog/google-review-removal-for-law-firms.html">Review Removal for Law Firms</a></li>
+            <li><a href="/blog/google-review-removal-for-doctors.html">Review Removal for Doctors</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:info@deletegooglereviews.com">info@deletegooglereviews.com</a></li>
+            <li><a href="tel:+16197360704">+1 (619) 736-0704</a></li>
+            <li><a href="https://deletegooglereviews.com" target="_blank" rel="noopener">deletegooglereviews.com</a></li>
+            <li style="color:rgba(255,255,255,0.45);font-size:13px;">San Diego, CA, USA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-awards-row">
+        <span class="footer-award-chip">&#9733; Inc. 5000 Verified</span>
+        <span class="footer-award-chip">&#9733; Forbes Council Member</span>
+        <span class="footer-award-chip">&#9733; BBB Accredited</span>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 DeleteGoogleReviews.com. All rights reserved. San Diego, CA, USA</span>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M9 14V4M4 9l5-5 5 5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script>
+    // Nav scroll effect
+    window.addEventListener('scroll', function() {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+      var st = document.getElementById('scroll-top');
+      if (st) st.classList.toggle('visible', window.scrollY > 400);
+    });
+  </script>
+</body>
+</html>

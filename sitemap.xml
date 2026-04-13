@@ -1,9 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.deletegooglereviews.com</loc>
-    <lastmod>2026-04-01</lastmod>
+    <loc>https://deletegooglereviews.com/</loc>
+    <lastmod>2026-04-12</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/how-to-remove-fake-google-review.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/google-review-removal-for-law-firms.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/google-review-removal-for-doctors.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/can-you-delete-a-google-review.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/how-long-to-remove-google-review.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/glassdoor-review-removal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/yelp-review-removal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/avvo-review-removal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/reddit-post-removal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/airbnb-review-removal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>
