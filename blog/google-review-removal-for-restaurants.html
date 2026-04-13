@@ -6,6 +6,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Review Removal for Restaurants and Hospitality</title>
   <meta name="description" content="How restaurants can remove fake, competitor, and policy-violating Google reviews. Common attack patterns, removal strategies, and protecting your rating." />
@@ -158,6 +166,29 @@
     .footer-social-link:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
     .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--navy); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); opacity: 0; transition: opacity 0.3s; z-index: 50; }
     .scroll-top.visible { opacity: 1; }
+  
+    /* Dropdown nav */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after { content: ''; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; margin-top: 2px; }
+    .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(15,45,82,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 0; min-width: 200px; z-index: 200; margin-top: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 13px; color: rgba(255,255,255,0.75); transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: white; }
+    .nav-phone { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-phone:hover { color: #4ade80; }
+    .nav-phone svg { flex-shrink: 0; }
+    @media (max-width: 1023px) { .nav-links { display: none; } .nav-phone span { display: none; } }
+    @media (min-width: 1024px) { .nav-mobile-toggle { display: none; } }
+
+  
+    /* Table of Contents */
+    .toc { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px 28px; margin: 28px 0 36px; }
+    .toc-title { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a { font-size: 14px; color: var(--blue); font-weight: 500; transition: color 0.2s; }
+    .toc-list a:hover { color: var(--navy); text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -175,14 +206,55 @@
         <div class="nav-logo-text">DeleteGoogleReviews.com<span class="nav-logo-sub">Independent Review Removal Experts</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="/#how-it-works">How It Works</a></li>
-        <li><a href="/#pricing">Pricing</a></li>
-        <li><a href="/#faq">FAQ</a></li>
+        <li class="nav-dropdown">
+          <a href="/#how-it-works">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="/#how-it-works">Google Reviews</a>
+            <a href="/glassdoor-review-removal/">Glassdoor</a>
+            <a href="/yelp-review-removal/">Yelp</a>
+            <a href="/avvo-review-removal/">Avvo</a>
+            <a href="/reddit-post-removal/">Reddit</a>
+            <a href="/airbnb-review-removal/">Airbnb</a>
+            <a href="/complaintsboard-removal/">ComplaintsBoard</a>
+            <a href="/trustpilot-review-removal/">Trustpilot</a>
+            <a href="/bbb-review-removal/">BBB</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/why-us/">Industries</a>
+          <div class="nav-dropdown-menu">
+            <a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a>
+            <a href="/blog/google-review-removal-for-doctors.html">Doctors</a>
+            <a href="/google-review-removal-for-dentists/">Dentists</a>
+            <a href="/google-review-removal-for-restaurants/">Restaurants</a>
+            <a href="/google-review-removal-for-real-estate/">Real Estate</a>
+            <a href="/google-review-removal-for-contractors/">Contractors</a>
+            <a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a>
+            <a href="/google-review-removal-for-hotels/">Hotels</a>
+            <a href="/google-review-removal-for-veterinarians/">Veterinarians</a>
+            <a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/google-review-removal-san-diego/">Locations</a>
+          <div class="nav-dropdown-menu">
+            <a href="/google-review-removal-san-diego/">San Diego</a>
+            <a href="/google-review-removal-los-angeles/">Los Angeles</a>
+            <a href="/google-review-removal-new-york/">New York</a>
+            <a href="/google-review-removal-houston/">Houston</a>
+            <a href="/google-review-removal-miami/">Miami</a>
+          </div>
+        </li>
+        <li><a href="/our-process/">Our Process</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="/#intake-form" class="btn-nav-portal">Client Portal</a>
-        <a href="/#intake-form" class="btn btn-orange btn-sm">Get a Free Quote</a>
+        <a href="tel:+16197360704" class="nav-phone">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14.5 11.5v2a1 1 0 01-1.1 1 10.5 10.5 0 01-4.6-1.6 10.3 10.3 0 01-3.2-3.2A10.5 10.5 0 014 5.1 1 1 0 015 4h2a1 1 0 011 .9 6.5 6.5 0 00.4 1.4 1 1 0 01-.2 1l-.9.9a8 8 0 003.2 3.2l.9-.9a1 1 0 011-.2 6.5 6.5 0 001.4.4 1 1 0 01.7 1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>+1 (619) 736-0704</span>
+        </a>
+        <a href="/#intake-form" class="btn btn-orange btn-sm">Free Consultation</a>
       </div>
       <button class="nav-mobile-toggle" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="4" width="22" height="2" rx="1" fill="white"/><rect y="10" width="22" height="2" rx="1" fill="white"/><rect y="16" width="22" height="2" rx="1" fill="white"/></svg>
@@ -210,26 +282,42 @@
       <div class="article-content">
 
         <p>Restaurants are the single most targeted business type for fake Google reviews. No other industry faces the same volume, variety, and intensity of fraudulent review activity. Whether it comes from a competitor down the street, a disgruntled ex-employee, a customer who confused your restaurant with another establishment, or a troll who never set foot in your dining room, a fake one-star review can cost a restaurant thousands of dollars in lost reservations and walk-in traffic before it is addressed.</p>
+        <div class="toc">
+          <div class="toc-title">Table of Contents</div>
+          <ul class="toc-list">
+          <li><a href="#why-restaurants-are-the-top-target-for-fake-reviews">Why Restaurants Are the Top Target for Fake Reviews</a></li>
+          <li><a href="#high-volume-and-low-barriers">High Volume and Low Barriers</a></li>
+          <li><a href="#dense-competition">Dense Competition</a></li>
+          <li><a href="#high-staff-turnover">High Staff Turnover</a></li>
+          <li><a href="#emotional-consumer-behavior">Emotional Consumer Behavior</a></li>
+          <li><a href="#common-fake-review-attack-patterns-for-restaurants">Common Fake Review Attack Patterns for Restaurants</a></li>
+          <li><a href="#food-poisoning-claims-without-health-department-reports">Food Poisoning Claims Without Health Department Reports</a></li>
+          <li><a href="#competitor-sabotage-in-dense-restaurant-areas">Competitor Sabotage in Dense Restaurant Areas</a></li>
+          <li><a href="#delivery-app-confusion">Delivery App Confusion</a></li>
+          <li><a href="#ex-employee-revenge">Ex-Employee Revenge</a></li>
+          </ul>
+        </div>
+
 
         <p>This guide is written specifically for restaurant owners, general managers, and hospitality operators who need to understand the unique review challenges facing their industry and the specific strategies that work for getting fake restaurant reviews removed from Google.</p>
 
-        <h2>Why Restaurants Are the Top Target for Fake Reviews</h2>
+        <h2 id="why-restaurants-are-the-top-target-for-fake-reviews">Why Restaurants Are the Top Target for Fake Reviews</h2>
 
         <p>Several factors make restaurants uniquely vulnerable to fake review attacks compared to businesses in other industries.</p>
 
-        <h3>High Volume and Low Barriers</h3>
+        <h3 id="high-volume-and-low-barriers">High Volume and Low Barriers</h3>
 
         <p>Restaurants serve large numbers of customers daily, which makes it nearly impossible to verify whether any individual reviewer was actually a customer. Unlike a law firm or medical practice where customer relationships are documented, a restaurant has no reasonable way to confirm that a one-star reviewer ever walked through the door. Fake reviewers know this, and they exploit it. They can post a plausible-sounding review about a meal that never happened, and the restaurant has no definitive way to prove otherwise.</p>
 
-        <h3>Dense Competition</h3>
+        <h3 id="dense-competition">Dense Competition</h3>
 
         <p>Restaurants typically compete in dense geographic markets. A single block in a busy dining district might have five or ten restaurants serving the same cuisine. In this environment, even a small difference in Google ratings can redirect significant foot traffic. A restaurant with a 4.6 rating will capture more customers from Google searches than a nearby competitor with a 4.2 rating. This competitive dynamic creates a strong incentive for bad actors to use fake reviews as a weapon.</p>
 
-        <h3>High Staff Turnover</h3>
+        <h3 id="high-staff-turnover">High Staff Turnover</h3>
 
         <p>The restaurant industry has the highest employee turnover rate of any major industry in the United States. High turnover means more former employees with potential grievances, and former employees are one of the most common sources of fake Google reviews. A line cook who was terminated last month or a server who quit after a disagreement with management may post a revenge review that frames their employment complaint as a customer experience. For detailed guidance on handling these situations, see our guide on <a href="/blog/ex-employee-bad-google-review.html">what to do when an ex-employee leaves a bad Google review</a>.</p>
 
-        <h3>Emotional Consumer Behavior</h3>
+        <h3 id="emotional-consumer-behavior">Emotional Consumer Behavior</h3>
 
         <p>Dining is an emotional experience in ways that other purchases are not. A customer who has a bad meal may write a review driven by frustration that exaggerates the experience or misrepresents what happened. While exaggerated reviews from real customers are not always removable, the emotional nature of restaurant reviews creates an environment where it is easier for fake reviews to blend in and appear credible.</p>
 
@@ -237,45 +325,45 @@
           <p><strong>Industry data:</strong> According to research from ReviewTrackers, restaurants receive more online reviews than any other business category. With higher volume comes a higher proportion of fake, policy-violating, and otherwise removable reviews. The average restaurant has at least two to three reviews that potentially qualify for removal under Google's content policies.</p>
         </div>
 
-        <h2>Common Fake Review Attack Patterns for Restaurants</h2>
+        <h2 id="common-fake-review-attack-patterns-for-restaurants">Common Fake Review Attack Patterns for Restaurants</h2>
 
         <p>Understanding the specific attack patterns that restaurants face helps you identify removable reviews faster and build stronger removal cases.</p>
 
-        <h3>Food Poisoning Claims Without Health Department Reports</h3>
+        <h3 id="food-poisoning-claims-without-health-department-reports">Food Poisoning Claims Without Health Department Reports</h3>
 
         <p>One of the most damaging types of fake restaurant reviews involves false claims of food poisoning or foodborne illness. A reviewer states that they became sick after eating at your restaurant, sometimes adding dramatic details about hospital visits or prolonged illness. These reviews are particularly harmful because they directly attack the safety of your food, which is the most fundamental concern for any potential diner.</p>
 
         <p>The key to identifying and removing these reviews is documentation. If a reviewer claims food poisoning but no corresponding health department complaint exists for that date, the claim is unsubstantiated. Contact your local health department and request records for the relevant time period. If no complaints were filed, this is strong evidence that the review is either fabricated or significantly exaggerated. Google considers unsubstantiated health and safety claims to be a policy violation when they are demonstrably false.</p>
 
-        <h3>Competitor Sabotage in Dense Restaurant Areas</h3>
+        <h3 id="competitor-sabotage-in-dense-restaurant-areas">Competitor Sabotage in Dense Restaurant Areas</h3>
 
         <p>In neighborhoods with heavy restaurant competition, coordinated review attacks from competitors are common. A competing restaurant owner or their associates may post multiple negative reviews about your establishment from different accounts over a period of days or weeks. These reviews often follow a pattern: they appear in clusters, use similar language, come from accounts with thin review histories, and sometimes include positive reviews for the competing restaurant.</p>
 
         <p>Identifying competitor sabotage requires the same investigation process described in our guide on <a href="/blog/remove-google-review-left-by-competitor.html">removing competitor-posted Google reviews</a>. Check the reviewer's profile for positive reviews of your direct competitors. Look for patterns in timing, language, and account characteristics across multiple suspicious reviews. Document the pattern and present it to Google as a coordinated conflict-of-interest violation.</p>
 
-        <h3>Delivery App Confusion</h3>
+        <h3 id="delivery-app-confusion">Delivery App Confusion</h3>
 
         <p>This is one of the most frustrating sources of removable reviews for restaurants. A customer orders through DoorDash, Uber Eats, Grubhub, or another delivery platform. The delivery driver is late, the food arrives cold, the order is wrong because the driver mixed up bags, or the packaging was damaged during transit. The customer, understandably upset, leaves a one-star Google review blaming the restaurant for problems that were entirely caused by the delivery service.</p>
 
         <p>These reviews are removable because they describe an experience that the restaurant did not control or cause. The review is effectively off-topic because it critiques a third-party delivery service rather than the restaurant's food or in-house service. When filing a removal request, explain that the issues described in the review are attributable to a third-party delivery platform and that the restaurant had no control over the delivery, temperature, or order accuracy once the food left the premises.</p>
 
-        <h3>Ex-Employee Revenge</h3>
+        <h3 id="ex-employee-revenge">Ex-Employee Revenge</h3>
 
         <p>Restaurant employees who are terminated or who leave under unfavorable circumstances frequently turn to Google reviews as a way to retaliate. Because restaurant employees have insider knowledge of the kitchen, management practices, and daily operations, their reviews often sound convincing to outside readers even when the claims are exaggerated or false.</p>
 
         <p>Common ex-employee restaurant reviews include claims about kitchen cleanliness, food handling practices, management behavior, or working conditions. While these may sound like customer concerns, they are employment grievances posted on a customer review platform, which violates Google's conflict of interest policy. The detailed process for handling these reviews is covered in our <a href="/blog/ex-employee-bad-google-review.html">ex-employee review removal guide</a>.</p>
 
-        <h3>Review Extortion</h3>
+        <h3 id="review-extortion">Review Extortion</h3>
 
         <p>Some individuals post or threaten to post negative reviews in an attempt to extract free meals, refunds, or other compensation from restaurants. This practice, sometimes called review extortion or blackmail, is both a Google policy violation and potentially illegal. If a customer contacts you demanding compensation in exchange for removing or not posting a negative review, document the communication. Screenshots of text messages, emails, or social media messages showing the extortion attempt are powerful evidence for a removal request.</p>
 
         <div class="cta-box">
-          <h3>Restaurant Review Removal Specialists</h3>
+          <h3 id="restaurant-review-removal-specialists">Restaurant Review Removal Specialists</h3>
           <p>We work with restaurants across the country to remove fake, competitor, and policy-violating Google reviews. 94% success rate. Pay only for reviews successfully removed.</p>
           <a href="https://deletegooglereviews.com/#intake-form" class="btn btn-orange btn-lg">Get Your Free Evaluation</a>
         </div>
 
-        <h2>How to Identify Fake Restaurant Reviews</h2>
+        <h2 id="how-to-identify-fake-restaurant-reviews">How to Identify Fake Restaurant Reviews</h2>
 
         <p>Restaurant owners develop good instincts for spotting fake reviews over time, but it helps to have a systematic checklist. Here are the specific red flags to look for.</p>
 
@@ -288,75 +376,75 @@
           <li><strong>Language that suggests industry knowledge:</strong> If the review uses restaurant industry terminology, references back-of-house operations, or discusses aspects of restaurant management that a typical diner would not know about, the reviewer may be a competitor or former employee.</li>
         </ul>
 
-        <h2>The Removal Process for Restaurant Reviews</h2>
+        <h2 id="the-removal-process-for-restaurant-reviews">The Removal Process for Restaurant Reviews</h2>
 
         <p>The removal process for restaurant reviews follows the same general framework as other Google review removals, but there are restaurant-specific considerations at each step.</p>
 
-        <h3>Step 1: Document the Violation</h3>
+        <h3 id="step-1-document-the-violation">Step 1: Document the Violation</h3>
 
         <p>Before filing any report, gather all supporting evidence. For restaurants, this often includes POS system records showing no transaction matching the reviewer's claimed visit, health inspection reports contradicting food safety claims, delivery platform records showing the order was a delivery rather than dine-in, staff schedules confirming the restaurant was closed when the reviewer claims to have visited, or employment records if the reviewer is a former employee.</p>
 
-        <h3>Step 2: Flag the Review</h3>
+        <h3 id="step-2-flag-the-review">Step 2: Flag the Review</h3>
 
         <p>Flag the review through your Google Business Profile. Select the most applicable violation category. For competitor reviews, choose "Conflict of interest." For fabricated food safety claims, choose "It's not helpful" or the closest available category. For ex-employee reviews, choose "Conflict of interest."</p>
 
-        <h3>Step 3: Contact Google Support with Evidence</h3>
+        <h3 id="step-3-contact-google-support-with-evidence">Step 3: Contact Google Support with Evidence</h3>
 
         <p>For restaurant reviews, the standard flagging process alone rarely works. Contact Google Business Profile Support and present your documented evidence. Explain the specific policy violation clearly. For example: "This review claims food poisoning on March 15, but no health department complaint was filed for that date, and our POS records show no transaction matching this reviewer's name."</p>
 
-        <h3>Step 4: Respond Professionally While You Wait</h3>
+        <h3 id="step-4-respond-professionally-while-you-wait">Step 4: Respond Professionally While You Wait</h3>
 
         <p>Post a professional response to the review while your removal case is being processed. For restaurants, the response should be warm and service-oriented. A good restaurant response template: "Thank you for your feedback. We take every review seriously. We have checked our records and are unable to find a visit matching your description. We would love the opportunity to make things right. Please contact us directly at [phone number] so we can look into this further."</p>
 
         <p>For more detailed response templates and strategies, see our guide on <a href="/blog/how-to-respond-to-fake-google-review.html">how to respond to a fake Google review</a>.</p>
 
-        <h2>Protecting and Rebuilding Your Restaurant's Rating</h2>
+        <h2 id="protecting-and-rebuilding-your-restaurant-s-rating">Protecting and Rebuilding Your Restaurant's Rating</h2>
 
         <p>Removing fake reviews is one part of the equation. Proactively building a strong review profile protects your restaurant from the impact of any individual negative review and makes your overall rating more resilient.</p>
 
-        <h3>Encourage Reviews from Happy Customers</h3>
+        <h3 id="encourage-reviews-from-happy-customers">Encourage Reviews from Happy Customers</h3>
 
         <p>The most effective way to protect your rating is to have a large volume of genuine positive reviews. Train your front-of-house staff to mention reviews to customers who express satisfaction with their meal. Include a Google review link on receipts, table cards, or follow-up communications. Make it as easy as possible for satisfied customers to leave a review immediately after their experience.</p>
 
-        <h3>Respond to Every Review</h3>
+        <h3 id="respond-to-every-review">Respond to Every Review</h3>
 
         <p>Respond to every review your restaurant receives, positive and negative. Thank customers for positive reviews with specific, personalized responses. Address negative reviews professionally and constructively. Google's algorithm rewards consistent engagement, and a high response rate signals to potential customers that you care about their experience.</p>
 
-        <h3>Monitor Reviews Daily</h3>
+        <h3 id="monitor-reviews-daily">Monitor Reviews Daily</h3>
 
         <p>Set up real-time notifications for new reviews. The faster you identify a fake or policy-violating review, the faster you can begin the removal process and the less damage it does to your rating. Many restaurant owners check their Google reviews as part of their daily opening routine, alongside checking reservations and inventory.</p>
 
-        <h3>Address Legitimate Complaints Quickly</h3>
+        <h3 id="address-legitimate-complaints-quickly">Address Legitimate Complaints Quickly</h3>
 
         <p>Not every negative review is fake. When a customer has a genuine complaint, responding promptly and offering to make it right can sometimes result in the customer updating or removing their negative review voluntarily. A service recovery that turns a negative experience into a positive one is more valuable than any removal process.</p>
 
-        <h3>Build Reviews Across Platforms</h3>
+        <h3 id="build-reviews-across-platforms">Build Reviews Across Platforms</h3>
 
         <p>While Google reviews are the most visible, maintaining a strong presence on <a href="/yelp-review-removal/">Yelp</a>, TripAdvisor, and other platforms provides additional social proof and reduces your dependence on any single review source. Cross-platform review strength also improves your overall search visibility.</p>
 
-        <h2>Industry-Specific Considerations for Hospitality</h2>
+        <h2 id="industry-specific-considerations-for-hospitality">Industry-Specific Considerations for Hospitality</h2>
 
         <p>Beyond traditional restaurants, other hospitality businesses face similar but distinct review challenges.</p>
 
-        <h3>Hotels and Lodging</h3>
+        <h3 id="hotels-and-lodging">Hotels and Lodging</h3>
 
         <p>Hotels face fake reviews from competitors, travel agents who did not get a commission, and guests who attempt review extortion for room upgrades or refunds. The removal process is similar to restaurants, with the added advantage that hotels have robust reservation records that can prove or disprove whether a reviewer was actually a guest.</p>
 
-        <h3>Bars and Nightlife</h3>
+        <h3 id="bars-and-nightlife">Bars and Nightlife</h3>
 
         <p>Bars and nightclubs frequently receive reviews from patrons who were denied entry or cut off from service. While these reviews may come from real customers, they are often off-topic because they describe the enforcement of legal requirements like age verification or intoxication limits rather than the actual customer experience. These reviews may qualify for removal as off-topic content.</p>
 
-        <h3>Catering and Event Venues</h3>
+        <h3 id="catering-and-event-venues">Catering and Event Venues</h3>
 
         <p>Catering companies and event venues sometimes receive reviews from guests who attended an event but were not the actual client. A wedding guest who did not like the food may leave a review, but they were not the customer who hired the catering company. In some cases, these reviews can be reported as off-topic because the reviewer does not have a direct customer relationship with the business.</p>
 
-        <h2>The Cost of Inaction</h2>
+        <h2 id="the-cost-of-inaction">The Cost of Inaction</h2>
 
         <p>For restaurants operating on thin margins, the financial impact of fake reviews is particularly acute. Research shows that each one-star drop in rating can reduce restaurant revenue by 5% to 9%. For a restaurant doing $800,000 in annual revenue, a rating drop caused by fake reviews could mean $40,000 to $72,000 in lost revenue per year.</p>
 
         <p>When you compare that to the cost of professional review removal, which typically ranges from $700 to $950 per review on a pay-for-results basis, the math is clear. Removing even a single fake review that is dragging down your rating pays for itself many times over. For a full breakdown of removal costs and options, see our <a href="/blog/google-review-removal-cost.html">Google review removal cost guide</a>.</p>
 
-        <h2>Getting Started with Restaurant Review Removal</h2>
+        <h2 id="getting-started-with-restaurant-review-removal">Getting Started with Restaurant Review Removal</h2>
 
         <p>If your restaurant has fake reviews that are hurting your rating and costing you customers, the first step is a free case evaluation. Our team will review the suspicious reviews on your Google Business Profile, identify which ones qualify for removal, and give you an honest assessment of the likelihood of success for each review.</p>
 
@@ -419,28 +507,57 @@
             <a href="#" class="footer-social-link" aria-label="X"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="1" y="1" width="15" height="15" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/><path d="M4.5 4.5L9 8.5M12.5 4.5L9 8.5M9 8.5L4.5 12.5M9 8.5L12.5 12.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
           </div>
         </div>
-        <div>
+                <div>
           <div class="footer-col-title">Services</div>
           <ul class="footer-links">
-            <li><a href="/#how-it-works">How It Works</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/#intake-form">Free Consultation</a></li>
-            <li><a href="/glassdoor-review-removal/">Glassdoor Removal</a></li>
-            <li><a href="/yelp-review-removal/">Yelp Removal</a></li>
-            <li><a href="/avvo-review-removal/">Avvo Removal</a></li>
-            <li><a href="/reddit-post-removal/">Reddit Removal</a></li>
-            <li><a href="/airbnb-review-removal/">Airbnb Removal</a></li>
+            <li><a href="/#how-it-works">Google Reviews</a></li>
+            <li><a href="/glassdoor-review-removal/">Glassdoor</a></li>
+            <li><a href="/yelp-review-removal/">Yelp</a></li>
+            <li><a href="/avvo-review-removal/">Avvo</a></li>
+            <li><a href="/reddit-post-removal/">Reddit</a></li>
+            <li><a href="/airbnb-review-removal/">Airbnb</a></li>
+            <li><a href="/complaintsboard-removal/">ComplaintsBoard</a></li>
+            <li><a href="/trustpilot-review-removal/">Trustpilot</a></li>
+            <li><a href="/bbb-review-removal/">BBB</a></li>
           </ul>
         </div>
+
         <div>
-          <div class="footer-col-title">Resources</div>
+          <div class="footer-col-title">Industries</div>
           <ul class="footer-links">
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/blog/how-to-remove-fake-google-review.html">How to Remove a Fake Google Review</a></li>
-            <li><a href="/blog/google-review-removal-for-law-firms.html">Review Removal for Law Firms</a></li>
-            <li><a href="/blog/google-review-removal-for-doctors.html">Review Removal for Doctors</a></li>
+            <li><a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a></li>
+            <li><a href="/blog/google-review-removal-for-doctors.html">Doctors</a></li>
+            <li><a href="/google-review-removal-for-dentists/">Dentists</a></li>
+            <li><a href="/google-review-removal-for-restaurants/">Restaurants</a></li>
+            <li><a href="/google-review-removal-for-real-estate/">Real Estate</a></li>
+            <li><a href="/google-review-removal-for-contractors/">Contractors</a></li>
+            <li><a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a></li>
+            <li><a href="/google-review-removal-for-hotels/">Hotels</a></li>
+            <li><a href="/google-review-removal-for-veterinarians/">Veterinarians</a></li>
+            <li><a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a></li>
           </ul>
         </div>
+
+        <div>
+          <div class="footer-col-title">Locations</div>
+          <ul class="footer-links">
+            <li><a href="/google-review-removal-san-diego/">San Diego</a></li>
+            <li><a href="/google-review-removal-los-angeles/">Los Angeles</a></li>
+            <li><a href="/google-review-removal-new-york/">New York</a></li>
+            <li><a href="/google-review-removal-houston/">Houston</a></li>
+            <li><a href="/google-review-removal-miami/">Miami</a></li>
+          </ul>
+          <div class="footer-col-title" style="margin-top:20px;">Company</div>
+          <ul class="footer-links">
+            <li><a href="/why-us/">Why Us</a></li>
+            <li><a href="/our-process/">Our Process</a></li>
+            <li><a href="/case-studies/">Case Studies</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+
         <div>
           <div class="footer-col-title">Contact</div>
           <ul class="footer-links">
@@ -455,6 +572,8 @@
         <span class="footer-award-chip">&#9733; Inc. 5000 Verified</span>
         <span class="footer-award-chip">&#9733; Forbes Council Member</span>
         <span class="footer-award-chip">&#9733; BBB Accredited</span>
+        <span class="footer-award-chip">&#9733; Trusted Since 2018</span>
+        <span class="footer-award-chip">&#9733; 100% Pay-for-Results Guarantee</span>
       </div>
       <hr class="footer-divider" />
       <div class="footer-bottom">

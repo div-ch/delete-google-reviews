@@ -6,6 +6,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ex-Employee Left a Bad Google Review? Here's What to Do</title>
   <meta name="description" content="Step-by-step guide to removing ex-employee Google reviews. Learn about Google's conflict of interest policy and how to build a removal case." />
@@ -158,6 +166,29 @@
     .footer-social-link:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
     .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--navy); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); opacity: 0; transition: opacity 0.3s; z-index: 50; }
     .scroll-top.visible { opacity: 1; }
+  
+    /* Dropdown nav */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after { content: ''; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; margin-top: 2px; }
+    .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(15,45,82,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 0; min-width: 200px; z-index: 200; margin-top: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 13px; color: rgba(255,255,255,0.75); transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: white; }
+    .nav-phone { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-phone:hover { color: #4ade80; }
+    .nav-phone svg { flex-shrink: 0; }
+    @media (max-width: 1023px) { .nav-links { display: none; } .nav-phone span { display: none; } }
+    @media (min-width: 1024px) { .nav-mobile-toggle { display: none; } }
+
+  
+    /* Table of Contents */
+    .toc { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px 28px; margin: 28px 0 36px; }
+    .toc-title { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a { font-size: 14px; color: var(--blue); font-weight: 500; transition: color 0.2s; }
+    .toc-list a:hover { color: var(--navy); text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -175,14 +206,55 @@
         <div class="nav-logo-text">DeleteGoogleReviews.com<span class="nav-logo-sub">Independent Review Removal Experts</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="/#how-it-works">How It Works</a></li>
-        <li><a href="/#pricing">Pricing</a></li>
-        <li><a href="/#faq">FAQ</a></li>
+        <li class="nav-dropdown">
+          <a href="/#how-it-works">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="/#how-it-works">Google Reviews</a>
+            <a href="/glassdoor-review-removal/">Glassdoor</a>
+            <a href="/yelp-review-removal/">Yelp</a>
+            <a href="/avvo-review-removal/">Avvo</a>
+            <a href="/reddit-post-removal/">Reddit</a>
+            <a href="/airbnb-review-removal/">Airbnb</a>
+            <a href="/complaintsboard-removal/">ComplaintsBoard</a>
+            <a href="/trustpilot-review-removal/">Trustpilot</a>
+            <a href="/bbb-review-removal/">BBB</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/why-us/">Industries</a>
+          <div class="nav-dropdown-menu">
+            <a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a>
+            <a href="/blog/google-review-removal-for-doctors.html">Doctors</a>
+            <a href="/google-review-removal-for-dentists/">Dentists</a>
+            <a href="/google-review-removal-for-restaurants/">Restaurants</a>
+            <a href="/google-review-removal-for-real-estate/">Real Estate</a>
+            <a href="/google-review-removal-for-contractors/">Contractors</a>
+            <a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a>
+            <a href="/google-review-removal-for-hotels/">Hotels</a>
+            <a href="/google-review-removal-for-veterinarians/">Veterinarians</a>
+            <a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/google-review-removal-san-diego/">Locations</a>
+          <div class="nav-dropdown-menu">
+            <a href="/google-review-removal-san-diego/">San Diego</a>
+            <a href="/google-review-removal-los-angeles/">Los Angeles</a>
+            <a href="/google-review-removal-new-york/">New York</a>
+            <a href="/google-review-removal-houston/">Houston</a>
+            <a href="/google-review-removal-miami/">Miami</a>
+          </div>
+        </li>
+        <li><a href="/our-process/">Our Process</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="/#intake-form" class="btn-nav-portal">Client Portal</a>
-        <a href="/#intake-form" class="btn btn-orange btn-sm">Get a Free Quote</a>
+        <a href="tel:+16197360704" class="nav-phone">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14.5 11.5v2a1 1 0 01-1.1 1 10.5 10.5 0 01-4.6-1.6 10.3 10.3 0 01-3.2-3.2A10.5 10.5 0 014 5.1 1 1 0 015 4h2a1 1 0 011 .9 6.5 6.5 0 00.4 1.4 1 1 0 01-.2 1l-.9.9a8 8 0 003.2 3.2l.9-.9a1 1 0 011-.2 6.5 6.5 0 001.4.4 1 1 0 01.7 1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>+1 (619) 736-0704</span>
+        </a>
+        <a href="/#intake-form" class="btn btn-orange btn-sm">Free Consultation</a>
       </div>
       <button class="nav-mobile-toggle" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="4" width="22" height="2" rx="1" fill="white"/><rect y="10" width="22" height="2" rx="1" fill="white"/><rect y="16" width="22" height="2" rx="1" fill="white"/></svg>
@@ -210,10 +282,26 @@
       <div class="article-content">
 
         <p>Discovering that a former employee has left a negative Google review about your business is one of the most frustrating situations a business owner can face. Unlike a review from an unhappy customer, an ex-employee review often carries insider knowledge that makes it sound credible to potential customers, even when the claims are exaggerated, misleading, or entirely false. The review may reference internal processes, management decisions, or workplace dynamics that a customer would never know about.</p>
+        <div class="toc">
+          <div class="toc-title">Table of Contents</div>
+          <ul class="toc-list">
+          <li><a href="#why-ex-employee-reviews-are-removable">Why Ex-Employee Reviews Are Removable</a></li>
+          <li><a href="#how-to-identify-an-ex-employee-review">How to Identify an Ex-Employee Review</a></li>
+          <li><a href="#content-signals">Content Signals</a></li>
+          <li><a href="#timing-signals">Timing Signals</a></li>
+          <li><a href="#account-analysis">Account Analysis</a></li>
+          <li><a href="#gathering-evidence-of-the-employment-relationship">Gathering Evidence of the Employment Relationship</a></li>
+          <li><a href="#employment-records">Employment Records</a></li>
+          <li><a href="#name-and-account-matching">Name and Account Matching</a></li>
+          <li><a href="#social-media-and-public-records">Social Media and Public Records</a></li>
+          <li><a href="#corroborating-details">Corroborating Details</a></li>
+          </ul>
+        </div>
+
 
         <p>The good news is that ex-employee reviews are one of the most clearly removable types of Google reviews. Google's content policies explicitly prohibit reviews that represent a conflict of interest, and reviews from current or former employees fall squarely into that category. This guide walks you through every step of identifying, documenting, reporting, and removing ex-employee reviews from your Google Business Profile.</p>
 
-        <h2>Why Ex-Employee Reviews Are Removable</h2>
+        <h2 id="why-ex-employee-reviews-are-removable">Why Ex-Employee Reviews Are Removable</h2>
 
         <p>Google's review platform is designed for customers to share their experiences with a business. It is not a platform for employment grievances, workplace disputes, or labor complaints. Google's content policies make this distinction clear through their conflict of interest policy.</p>
 
@@ -232,11 +320,11 @@
           <p><strong>Key point:</strong> You do not need to prove that an ex-employee review is false to get it removed. You need to demonstrate that the reviewer is a former employee, which makes the review a conflict of interest violation regardless of its content. This is an important distinction that simplifies the removal process significantly.</p>
         </div>
 
-        <h2>How to Identify an Ex-Employee Review</h2>
+        <h2 id="how-to-identify-an-ex-employee-review">How to Identify an Ex-Employee Review</h2>
 
         <p>Sometimes it is obvious that a review came from a former employee. The reviewer may use their real name, reference specific internal matters, or post the review shortly after their departure. Other times, the connection is less clear, and you need to investigate further.</p>
 
-        <h3>Content Signals</h3>
+        <h3 id="content-signals">Content Signals</h3>
 
         <p>Ex-employee reviews often contain language that reveals insider knowledge. Look for these indicators:</p>
 
@@ -248,59 +336,59 @@
           <li><strong>Personal grievances framed as customer complaints:</strong> Sometimes ex-employees attempt to disguise their review as a customer experience, but the underlying complaint is clearly about their employment experience rather than a product or service they purchased.</li>
         </ul>
 
-        <h3>Timing Signals</h3>
+        <h3 id="timing-signals">Timing Signals</h3>
 
         <p>Check whether the review was posted shortly after an employee left your business. If an employee was terminated or resigned in early March and a negative review appeared in mid-March from an account that has never reviewed your business before, the timing correlation is significant evidence.</p>
 
         <p>Also look for reviews that coincide with employment disputes. If you are aware of an ongoing disagreement with a former employee about final pay, benefits, or non-compete agreements, a negative review posted during that period is likely connected.</p>
 
-        <h3>Account Analysis</h3>
+        <h3 id="account-analysis">Account Analysis</h3>
 
         <p>Click on the reviewer's profile and examine their review history. If the reviewer used a pseudonym, look at their other reviews for location patterns that match the area where your former employee lives or works. Sometimes an ex-employee's Google account will have reviews for businesses near their home, their gym, or other personal locations that can help confirm their identity.</p>
 
-        <h2>Gathering Evidence of the Employment Relationship</h2>
+        <h2 id="gathering-evidence-of-the-employment-relationship">Gathering Evidence of the Employment Relationship</h2>
 
         <p>To build a successful removal case, you need documentation that connects the reviewer to your business as a former employee. Here is what to gather.</p>
 
-        <h3>Employment Records</h3>
+        <h3 id="employment-records">Employment Records</h3>
 
         <p>Locate the former employee's personnel file, including their hire date, termination date, position, and any documentation related to their departure. You do not need to share the full personnel file with Google, but having this information on hand allows you to reference specific dates and details in your removal request.</p>
 
-        <h3>Name and Account Matching</h3>
+        <h3 id="name-and-account-matching">Name and Account Matching</h3>
 
         <p>If the reviewer used their real name or a recognizable variation of it, document the match between the reviewer's profile name and the name in your employment records. Take a screenshot of the reviewer's Google profile alongside their employment records showing the same name.</p>
 
-        <h3>Social Media and Public Records</h3>
+        <h3 id="social-media-and-public-records">Social Media and Public Records</h3>
 
         <p>Check the reviewer's social media profiles, LinkedIn page, and any public records that confirm they previously worked at your business. A LinkedIn profile listing your company as a former employer is strong supporting evidence. Screenshots of social media posts where the former employee mentions working at your business or discusses their departure can also support your case.</p>
 
-        <h3>Corroborating Details</h3>
+        <h3 id="corroborating-details">Corroborating Details</h3>
 
         <p>If the review mentions specific details that only an insider would know, document how those details correspond to the former employee's role and knowledge base. For example, if the review complains about a specific management practice and the former employee was in a department where that practice was implemented, document that connection.</p>
 
-        <h3>Communication Records</h3>
+        <h3 id="communication-records">Communication Records</h3>
 
         <p>If the former employee made threats, verbal or written, to damage your business reputation after their departure, those communications are valuable evidence. Text messages, emails, or documented verbal threats that reference leaving negative reviews directly support your removal case.</p>
 
         <div class="cta-box">
-          <h3>Let Us Handle the Removal Process</h3>
+          <h3 id="let-us-handle-the-removal-process">Let Us Handle the Removal Process</h3>
           <p>Ex-employee reviews are one of our most successful removal categories. 94% success rate. You only pay if the review is successfully removed.</p>
           <a href="https://deletegooglereviews.com/#intake-form" class="btn btn-orange btn-lg">Get Your Free Evaluation</a>
         </div>
 
-        <h2>Filing Your Removal Report with Google: Step by Step</h2>
+        <h2 id="filing-your-removal-report-with-google-step-by-step">Filing Your Removal Report with Google: Step by Step</h2>
 
         <p>Once you have gathered your evidence, follow this process to file your removal request.</p>
 
-        <h3>Step 1: Flag the Review</h3>
+        <h3 id="step-1-flag-the-review">Step 1: Flag the Review</h3>
 
         <p>Start by flagging the review through Google Maps or your Google Business Profile. Navigate to the review, click the three-dot menu, and select "Report review." Choose "Conflict of interest" as the violation category. This initial flag creates a record of your complaint in Google's system.</p>
 
-        <h3>Step 2: Contact Google Business Profile Support</h3>
+        <h3 id="step-2-contact-google-business-profile-support">Step 2: Contact Google Business Profile Support</h3>
 
         <p>Do not rely on the standard flagging process alone. Contact Google Business Profile Support directly by logging into your Business Profile, navigating to the Help section, and requesting a chat or phone callback with a support representative. When you connect with a representative, explain that you have a review from a confirmed former employee that violates Google's conflict of interest policy.</p>
 
-        <h3>Step 3: Present Your Evidence</h3>
+        <h3 id="step-3-present-your-evidence">Step 3: Present Your Evidence</h3>
 
         <p>The support representative can escalate your case and attach evidence to your report. Provide the following in a clear, organized format:</p>
 
@@ -312,37 +400,37 @@
           <li>Any communications where the former employee threatened to damage your reputation online</li>
         </ul>
 
-        <h3>Step 4: Follow Up</h3>
+        <h3 id="step-4-follow-up">Step 4: Follow Up</h3>
 
         <p>After submitting your case, follow up within seven to ten business days if you have not received a resolution. Google's content moderation team may need time to evaluate the evidence, but persistent follow-up increases the likelihood of a timely resolution. Keep records of every interaction with Google support, including case numbers, representative names, and dates.</p>
 
-        <h3>Step 5: Escalate if Denied</h3>
+        <h3 id="step-5-escalate-if-denied">Step 5: Escalate if Denied</h3>
 
         <p>If your initial request is denied, do not give up. Request a re-evaluation through the review status tool in the Business Profile Help Center. In your escalation, reference the specific evidence that was previously submitted and explain why the denial was incorrect. Professional removal services are particularly effective at this escalation stage, as they know which channels and framing produce results after an initial denial. For more on the full removal process, see our guide on <a href="/blog/how-to-remove-fake-google-review.html">how to remove a fake Google review</a>.</p>
 
-        <h2>Legal Options for Ex-Employee Reviews</h2>
+        <h2 id="legal-options-for-ex-employee-reviews">Legal Options for Ex-Employee Reviews</h2>
 
         <p>In some cases, the Google reporting process alone may not produce results, or the content of the review may be severe enough to warrant legal action.</p>
 
-        <h3>Cease-and-Desist Letters</h3>
+        <h3 id="cease-and-desist-letters">Cease-and-Desist Letters</h3>
 
         <p>An attorney can send a formal cease-and-desist letter to the former employee demanding that they remove the review. This is often effective because former employees, unlike anonymous trolls, are identifiable and have a personal stake in avoiding legal proceedings. A well-drafted cease-and-desist letter makes it clear that leaving a fake or misleading review can have legal consequences, which motivates many former employees to remove the review voluntarily.</p>
 
         <p>Cease-and-desist letters typically cost between $500 and $2,000, depending on the attorney and the complexity of the case. For many businesses, this is a cost-effective option when combined with a Google removal report. For a full breakdown of costs across all removal methods, see our <a href="/blog/google-review-removal-cost.html">review removal cost guide</a>.</p>
 
-        <h3>Defamation Claims</h3>
+        <h3 id="defamation-claims">Defamation Claims</h3>
 
         <p>If the ex-employee review contains provably false statements of fact that have caused measurable financial harm to your business, you may have a viable defamation claim. Defamation cases require you to prove that the statements are false, that the reviewer knew they were false or acted with reckless disregard for the truth, and that you suffered actual damages as a result.</p>
 
         <p>Defamation lawsuits are expensive and time-consuming, typically costing $5,000 to $10,000 or more and taking months to resolve. However, if the former employee's review contains serious false allegations, such as claims of illegal activity, safety violations, or fraud, the investment in legal action may be warranted to protect your business reputation.</p>
 
-        <h3>Non-Disparagement Agreements</h3>
+        <h3 id="non-disparagement-agreements">Non-Disparagement Agreements</h3>
 
         <p>If your former employee signed a non-disparagement agreement as part of their employment contract or severance package, their Google review may constitute a breach of that agreement. In this case, your attorney can enforce the agreement directly, which typically results in faster resolution than pursuing a defamation claim.</p>
 
         <p>Review your separation agreements and employment contracts to determine whether a non-disparagement clause exists. If it does, your attorney can send a demand letter citing the specific breach and the remedies available under the agreement.</p>
 
-        <h2>Responding to the Review While You Pursue Removal</h2>
+        <h2 id="responding-to-the-review-while-you-pursue-removal">Responding to the Review While You Pursue Removal</h2>
 
         <p>While your removal case is being processed, post a professional response to the review. This is critical because potential customers will see the review during the removal period and your response shapes their perception of your business.</p>
 
@@ -350,31 +438,31 @@
 
         <p>This response subtly communicates that the reviewer is not a customer without explicitly accusing them of being an ex-employee. For more detailed response templates and strategies, see our guide on <a href="/blog/how-to-respond-to-fake-google-review.html">how to respond to a fake Google review</a>.</p>
 
-        <h2>Protecting Against Future Ex-Employee Attacks</h2>
+        <h2 id="protecting-against-future-ex-employee-attacks">Protecting Against Future Ex-Employee Attacks</h2>
 
         <p>Once you have dealt with the immediate review, take proactive steps to reduce the likelihood of future attacks from former employees.</p>
 
-        <h3>Separation Agreements</h3>
+        <h3 id="separation-agreements">Separation Agreements</h3>
 
         <p>Include non-disparagement clauses in all separation and severance agreements. These clauses should specifically reference online review platforms and social media. Make sure the language is clear about what constitutes a violation and what remedies are available if the agreement is breached.</p>
 
-        <h3>Exit Interviews</h3>
+        <h3 id="exit-interviews">Exit Interviews</h3>
 
         <p>Conduct thorough exit interviews with departing employees. Address any grievances directly and attempt to resolve outstanding issues before the employee leaves. Employees who feel heard during the exit process are less likely to seek retribution through online reviews afterward.</p>
 
-        <h3>Employment Handbook Updates</h3>
+        <h3 id="employment-handbook-updates">Employment Handbook Updates</h3>
 
         <p>Update your employee handbook to include a social media and online review policy. Make it clear that employees are expected to use appropriate channels for employment-related feedback, such as HR departments, <a href="/glassdoor-review-removal/">Glassdoor</a>, or the EEOC, rather than customer-facing review platforms.</p>
 
-        <h3>Review Monitoring</h3>
+        <h3 id="review-monitoring">Review Monitoring</h3>
 
         <p>Set up automated alerts for new reviews on your Google Business Profile. The faster you identify a problematic review, the faster you can begin the removal process. Many businesses use Google's built-in notification system alongside third-party review monitoring tools to ensure nothing slips through.</p>
 
-        <h3>Build a Strong Review Base</h3>
+        <h3 id="build-a-strong-review-base">Build a Strong Review Base</h3>
 
         <p>A robust collection of positive reviews from genuine customers dilutes the impact of any single negative review, including one from a former employee. Actively encourage satisfied customers to leave reviews, and make the process as easy as possible by providing direct links to your Google review page.</p>
 
-        <h2>The Bottom Line on Ex-Employee Reviews</h2>
+        <h2 id="the-bottom-line-on-ex-employee-reviews">The Bottom Line on Ex-Employee Reviews</h2>
 
         <p>Ex-employee reviews are among the most clearly removable types of Google reviews because they represent a textbook conflict of interest violation. The key to successful removal is documenting the employment relationship and presenting that evidence through the right channels. Self-flagging alone rarely works for this type of review because the standard flagging interface does not allow you to attach evidence or explain the context.</p>
 
@@ -437,28 +525,57 @@
             <a href="#" class="footer-social-link" aria-label="X"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="1" y="1" width="15" height="15" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/><path d="M4.5 4.5L9 8.5M12.5 4.5L9 8.5M9 8.5L4.5 12.5M9 8.5L12.5 12.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
           </div>
         </div>
-        <div>
+                <div>
           <div class="footer-col-title">Services</div>
           <ul class="footer-links">
-            <li><a href="/#how-it-works">How It Works</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/#intake-form">Free Consultation</a></li>
-            <li><a href="/glassdoor-review-removal/">Glassdoor Removal</a></li>
-            <li><a href="/yelp-review-removal/">Yelp Removal</a></li>
-            <li><a href="/avvo-review-removal/">Avvo Removal</a></li>
-            <li><a href="/reddit-post-removal/">Reddit Removal</a></li>
-            <li><a href="/airbnb-review-removal/">Airbnb Removal</a></li>
+            <li><a href="/#how-it-works">Google Reviews</a></li>
+            <li><a href="/glassdoor-review-removal/">Glassdoor</a></li>
+            <li><a href="/yelp-review-removal/">Yelp</a></li>
+            <li><a href="/avvo-review-removal/">Avvo</a></li>
+            <li><a href="/reddit-post-removal/">Reddit</a></li>
+            <li><a href="/airbnb-review-removal/">Airbnb</a></li>
+            <li><a href="/complaintsboard-removal/">ComplaintsBoard</a></li>
+            <li><a href="/trustpilot-review-removal/">Trustpilot</a></li>
+            <li><a href="/bbb-review-removal/">BBB</a></li>
           </ul>
         </div>
+
         <div>
-          <div class="footer-col-title">Resources</div>
+          <div class="footer-col-title">Industries</div>
           <ul class="footer-links">
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/blog/how-to-remove-fake-google-review.html">How to Remove a Fake Google Review</a></li>
-            <li><a href="/blog/google-review-removal-for-law-firms.html">Review Removal for Law Firms</a></li>
-            <li><a href="/blog/google-review-removal-for-doctors.html">Review Removal for Doctors</a></li>
+            <li><a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a></li>
+            <li><a href="/blog/google-review-removal-for-doctors.html">Doctors</a></li>
+            <li><a href="/google-review-removal-for-dentists/">Dentists</a></li>
+            <li><a href="/google-review-removal-for-restaurants/">Restaurants</a></li>
+            <li><a href="/google-review-removal-for-real-estate/">Real Estate</a></li>
+            <li><a href="/google-review-removal-for-contractors/">Contractors</a></li>
+            <li><a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a></li>
+            <li><a href="/google-review-removal-for-hotels/">Hotels</a></li>
+            <li><a href="/google-review-removal-for-veterinarians/">Veterinarians</a></li>
+            <li><a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a></li>
           </ul>
         </div>
+
+        <div>
+          <div class="footer-col-title">Locations</div>
+          <ul class="footer-links">
+            <li><a href="/google-review-removal-san-diego/">San Diego</a></li>
+            <li><a href="/google-review-removal-los-angeles/">Los Angeles</a></li>
+            <li><a href="/google-review-removal-new-york/">New York</a></li>
+            <li><a href="/google-review-removal-houston/">Houston</a></li>
+            <li><a href="/google-review-removal-miami/">Miami</a></li>
+          </ul>
+          <div class="footer-col-title" style="margin-top:20px;">Company</div>
+          <ul class="footer-links">
+            <li><a href="/why-us/">Why Us</a></li>
+            <li><a href="/our-process/">Our Process</a></li>
+            <li><a href="/case-studies/">Case Studies</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+
         <div>
           <div class="footer-col-title">Contact</div>
           <ul class="footer-links">
@@ -473,6 +590,8 @@
         <span class="footer-award-chip">&#9733; Inc. 5000 Verified</span>
         <span class="footer-award-chip">&#9733; Forbes Council Member</span>
         <span class="footer-award-chip">&#9733; BBB Accredited</span>
+        <span class="footer-award-chip">&#9733; Trusted Since 2018</span>
+        <span class="footer-award-chip">&#9733; 100% Pay-for-Results Guarantee</span>
       </div>
       <hr class="footer-divider" />
       <div class="footer-bottom">

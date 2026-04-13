@@ -6,6 +6,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Review Removal for Real Estate Agents and Brokers</title>
   <meta name="description" content="How real estate agents can remove unfair Google reviews. Deals that fell through, buyer's remorse, and protecting your agent ranking in Google Maps." />
@@ -158,6 +166,29 @@
     .footer-social-link:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
     .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--navy); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); opacity: 0; transition: opacity 0.3s; z-index: 50; }
     .scroll-top.visible { opacity: 1; }
+  
+    /* Dropdown nav */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after { content: ''; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; margin-top: 2px; }
+    .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(15,45,82,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 0; min-width: 200px; z-index: 200; margin-top: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 13px; color: rgba(255,255,255,0.75); transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: white; }
+    .nav-phone { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-phone:hover { color: #4ade80; }
+    .nav-phone svg { flex-shrink: 0; }
+    @media (max-width: 1023px) { .nav-links { display: none; } .nav-phone span { display: none; } }
+    @media (min-width: 1024px) { .nav-mobile-toggle { display: none; } }
+
+  
+    /* Table of Contents */
+    .toc { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px 28px; margin: 28px 0 36px; }
+    .toc-title { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a { font-size: 14px; color: var(--blue); font-weight: 500; transition: color 0.2s; }
+    .toc-list a:hover { color: var(--navy); text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -175,14 +206,55 @@
         <div class="nav-logo-text">DeleteGoogleReviews.com<span class="nav-logo-sub">Independent Review Removal Experts</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="/#how-it-works">How It Works</a></li>
-        <li><a href="/#pricing">Pricing</a></li>
-        <li><a href="/#faq">FAQ</a></li>
+        <li class="nav-dropdown">
+          <a href="/#how-it-works">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="/#how-it-works">Google Reviews</a>
+            <a href="/glassdoor-review-removal/">Glassdoor</a>
+            <a href="/yelp-review-removal/">Yelp</a>
+            <a href="/avvo-review-removal/">Avvo</a>
+            <a href="/reddit-post-removal/">Reddit</a>
+            <a href="/airbnb-review-removal/">Airbnb</a>
+            <a href="/complaintsboard-removal/">ComplaintsBoard</a>
+            <a href="/trustpilot-review-removal/">Trustpilot</a>
+            <a href="/bbb-review-removal/">BBB</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/why-us/">Industries</a>
+          <div class="nav-dropdown-menu">
+            <a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a>
+            <a href="/blog/google-review-removal-for-doctors.html">Doctors</a>
+            <a href="/google-review-removal-for-dentists/">Dentists</a>
+            <a href="/google-review-removal-for-restaurants/">Restaurants</a>
+            <a href="/google-review-removal-for-real-estate/">Real Estate</a>
+            <a href="/google-review-removal-for-contractors/">Contractors</a>
+            <a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a>
+            <a href="/google-review-removal-for-hotels/">Hotels</a>
+            <a href="/google-review-removal-for-veterinarians/">Veterinarians</a>
+            <a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/google-review-removal-san-diego/">Locations</a>
+          <div class="nav-dropdown-menu">
+            <a href="/google-review-removal-san-diego/">San Diego</a>
+            <a href="/google-review-removal-los-angeles/">Los Angeles</a>
+            <a href="/google-review-removal-new-york/">New York</a>
+            <a href="/google-review-removal-houston/">Houston</a>
+            <a href="/google-review-removal-miami/">Miami</a>
+          </div>
+        </li>
+        <li><a href="/our-process/">Our Process</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="/#intake-form" class="btn-nav-portal">Client Portal</a>
-        <a href="/#intake-form" class="btn btn-orange btn-sm">Get a Free Quote</a>
+        <a href="tel:+16197360704" class="nav-phone">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14.5 11.5v2a1 1 0 01-1.1 1 10.5 10.5 0 01-4.6-1.6 10.3 10.3 0 01-3.2-3.2A10.5 10.5 0 014 5.1 1 1 0 015 4h2a1 1 0 011 .9 6.5 6.5 0 00.4 1.4 1 1 0 01-.2 1l-.9.9a8 8 0 003.2 3.2l.9-.9a1 1 0 011-.2 6.5 6.5 0 001.4.4 1 1 0 01.7 1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>+1 (619) 736-0704</span>
+        </a>
+        <a href="/#intake-form" class="btn btn-orange btn-sm">Free Consultation</a>
       </div>
       <button class="nav-mobile-toggle" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="4" width="22" height="2" rx="1" fill="white"/><rect y="10" width="22" height="2" rx="1" fill="white"/><rect y="16" width="22" height="2" rx="1" fill="white"/></svg>
@@ -210,47 +282,63 @@
       <div class="article-content">
 
         <p>For real estate agents and brokers, Google reviews carry outsized importance. Homebuyers and sellers routinely check an agent's Google profile before making contact, and a handful of negative reviews can be the difference between winning a listing and losing it to a competitor. The problem is that real estate transactions are inherently emotional, high-stakes events where things can go wrong for reasons entirely outside the agent's control, and the agent often ends up taking the blame in a public review.</p>
+        <div class="toc">
+          <div class="toc-title">Table of Contents</div>
+          <ul class="toc-list">
+          <li><a href="#why-real-estate-agents-get-unfair-reviews">Why Real Estate Agents Get Unfair Reviews</a></li>
+          <li><a href="#deals-that-fall-through">Deals That Fall Through</a></li>
+          <li><a href="#buyer-s-remorse">Buyer's Remorse</a></li>
+          <li><a href="#competing-agents-posting-fake-reviews">Competing Agents Posting Fake Reviews</a></li>
+          <li><a href="#dual-agency-and-conflicting-expectations">Dual Agency and Conflicting Expectations</a></li>
+          <li><a href="#how-reviews-impact-your-real-estate-business">How Reviews Impact Your Real Estate Business</a></li>
+          <li><a href="#google-maps-ranking">Google Maps Ranking</a></li>
+          <li><a href="#zillow-and-cross-platform-visibility">Zillow and Cross-Platform Visibility</a></li>
+          <li><a href="#referral-confidence">Referral Confidence</a></li>
+          <li><a href="#nar-code-of-ethics-and-review-disputes">NAR Code of Ethics and Review Disputes</a></li>
+          </ul>
+        </div>
+
 
         <p>This guide covers why real estate professionals are especially vulnerable to unfair Google reviews, the most common scenarios that lead to negative reviews in this industry, how reviews impact your visibility in Google Maps and on platforms like Zillow, the removal process for reviews that violate Google's policies, and long-term reputation building strategies for agents and brokers.</p>
 
-        <h2>Why Real Estate Agents Get Unfair Reviews</h2>
+        <h2 id="why-real-estate-agents-get-unfair-reviews">Why Real Estate Agents Get Unfair Reviews</h2>
 
         <p>Real estate is different from most service industries in several ways that make agents disproportionately vulnerable to negative reviews that do not reflect their actual performance.</p>
 
-        <h3>Deals That Fall Through</h3>
+        <h3 id="deals-that-fall-through">Deals That Fall Through</h3>
         <p>Approximately 20% of real estate contracts fall through before closing. The reasons are numerous: the buyer's financing falls apart at the last minute, the home inspection reveals serious issues, the appraisal comes in below the offer price, or one party simply changes their mind. In most of these situations, the agent did everything correctly. They facilitated the transaction, managed the paperwork, coordinated inspections, and guided their client through the process. But when a deal falls through after weeks or months of emotional investment, the client often needs someone to blame. The agent becomes the target.</p>
 
         <p>These reviews are particularly damaging because they often contain language that implies the agent was incompetent or negligent, when the reality is that the deal failed due to factors no agent could have prevented. A buyer whose loan was denied writes a review saying the agent "wasted three months of our time." A seller whose buyer walked away after inspection writes that the agent "couldn't close the deal." Neither review accurately reflects the agent's performance, but both damage the agent's reputation.</p>
 
-        <h3>Buyer's Remorse</h3>
+        <h3 id="buyer-s-remorse">Buyer's Remorse</h3>
         <p>Purchasing a home is typically the largest financial decision a person makes. After the excitement of closing fades, some buyers experience regret. They notice things about the property they overlooked during showings. They discover that the neighborhood is noisier than they expected. They feel they paid too much. This remorse can turn into resentment directed at the agent who helped them find and purchase the property, even though the buyer made the final decision and signed all disclosures.</p>
 
         <p>Buyer's remorse reviews are challenging because they often surface weeks or months after the transaction, long after the agent has moved on to other clients. The review may accuse the agent of "not pointing out problems" or "pushing us into a bad deal," characterizations that are subjective and difficult to disprove publicly.</p>
 
-        <h3>Competing Agents Posting Fake Reviews</h3>
+        <h3 id="competing-agents-posting-fake-reviews">Competing Agents Posting Fake Reviews</h3>
         <p>Real estate is a fiercely competitive industry, particularly in hot markets where a handful of agents compete for the same listings and buyers. Some agents, or the marketing firms they hire, resort to posting fake negative reviews on competitors' Google profiles. This is a clear violation of Google's conflict-of-interest policies, but it happens frequently enough that it is one of the most common reasons real estate professionals seek review removal services.</p>
 
         <p>The telltale signs of competitor-posted reviews include: the reviewer has also left positive reviews for a competing agent or brokerage, the reviewer's account was created recently and has little or no other review history, the language in the review is unusually specific about industry practices in a way that suggests the writer is themselves in real estate, and the review appears shortly after the agent won a competitive listing or closed a significant deal.</p>
 
-        <h3>Dual Agency and Conflicting Expectations</h3>
+        <h3 id="dual-agency-and-conflicting-expectations">Dual Agency and Conflicting Expectations</h3>
         <p>In states where dual agency is permitted, agents who represent both the buyer and seller in the same transaction are particularly vulnerable to negative reviews. One party almost always feels that the agent favored the other side. The buyer feels the agent negotiated too aggressively on behalf of the seller, or the seller feels the agent pushed them to accept a lower offer. Even when the agent handled the dual agency with complete transparency and fairness, the perception of bias can lead to a negative review from one or both parties.</p>
 
-        <h2>How Reviews Impact Your Real Estate Business</h2>
+        <h2 id="how-reviews-impact-your-real-estate-business">How Reviews Impact Your Real Estate Business</h2>
 
-        <h3>Google Maps Ranking</h3>
+        <h3 id="google-maps-ranking">Google Maps Ranking</h3>
         <p>For real estate agents who maintain a Google Business Profile, reviews are one of the primary factors that determine where you appear in Google Maps search results. When a potential client searches for "real estate agent near me" or "top realtor in [city]," Google's algorithm weighs your review count, average star rating, and review recency heavily in determining your position. A drop from 4.8 stars to 4.2 stars can move you from the top of the local pack to page two of results, where very few potential clients will find you.</p>
 
-        <h3>Zillow and Cross-Platform Visibility</h3>
+        <h3 id="zillow-and-cross-platform-visibility">Zillow and Cross-Platform Visibility</h3>
         <p>Your Google reviews also affect your credibility on other platforms. Prospective clients who find you on Zillow, Realtor.com, or through a referral will often search your name on Google before reaching out. Even if your Zillow reviews are excellent, a Google profile with negative reviews can cause potential clients to hesitate or choose another agent. Your online reputation is cumulative across all platforms, and Google is typically the first place people check.</p>
 
-        <h3>Referral Confidence</h3>
+        <h3 id="referral-confidence">Referral Confidence</h3>
         <p>Real estate runs on referrals. When a past client refers you to a friend or family member, that person will almost certainly Google your name. If the first thing they see is a series of negative reviews, the referral loses its power. The referring client may even feel embarrassed for recommending you. Negative reviews do not just cost you direct business from Google searchers; they undermine your referral pipeline as well.</p>
 
         <div class="callout">
           <p><strong>Industry data:</strong> According to the National Association of Realtors, 97% of homebuyers use the internet during their home search. Among buyers under 40, nearly 80% say they check an agent's online reviews before making contact. A real estate agent's Google rating is not just a vanity metric. It is a core business driver.</p>
         </div>
 
-        <h2>NAR Code of Ethics and Review Disputes</h2>
+        <h2 id="nar-code-of-ethics-and-review-disputes">NAR Code of Ethics and Review Disputes</h2>
 
         <p>The National Association of Realtors (NAR) Code of Ethics includes provisions that are relevant to review disputes among agents. Article 15 prohibits Realtors from making false or misleading statements about other practitioners. If you can demonstrate that a competing agent (or someone acting on their behalf) posted a fake negative review on your Google profile, this may constitute a violation of Article 15 in addition to violating Google's content policies.</p>
 
@@ -258,48 +346,48 @@
 
         <p>It is worth noting that NAR ethics proceedings can take several months, so they should not be your primary strategy for getting a review removed quickly. They are best used as a complementary approach alongside direct removal efforts through Google or a professional service.</p>
 
-        <h2>The Removal Process for Real Estate Reviews</h2>
+        <h2 id="the-removal-process-for-real-estate-reviews">The Removal Process for Real Estate Reviews</h2>
 
         <p>The approach to removing a negative Google review depends on the type of violation involved. Here is how the process works for the most common real estate review scenarios.</p>
 
-        <h3>Competitor-Posted Reviews</h3>
+        <h3 id="competitor-posted-reviews">Competitor-Posted Reviews</h3>
         <p>These are the most straightforward to remove because they clearly violate Google's conflict-of-interest policies. The process involves documenting the connection between the reviewer and a competing agent or brokerage. This may include: the reviewer's Google account showing positive reviews of a competitor, public records or social media connecting the reviewer to a competing firm, or patterns in the review's language that indicate industry knowledge. Once documented, these cases are submitted to Google with a detailed report. Professional removal services achieve high success rates with competitor reviews because the evidence is typically clear and the policy violation is unambiguous.</p>
 
-        <h3>Reviews from Non-Clients</h3>
+        <h3 id="reviews-from-non-clients">Reviews from Non-Clients</h3>
         <p>If someone who was never your client leaves a review, this violates Google's requirement that reviews be based on genuine experiences. Perhaps someone attended an open house you hosted but never worked with you as an agent, or someone confused you with another agent. Documenting that the reviewer was never a client (through your CRM records and transaction history) provides a strong basis for removal.</p>
 
-        <h3>Reviews Containing False Statements</h3>
+        <h3 id="reviews-containing-false-statements">Reviews Containing False Statements</h3>
         <p>Reviews that make specific false factual claims, such as alleging you failed to disclose a known defect when you have documentation proving the disclosure was made, can be reported for containing misleading content. The key is having documentation that directly contradicts the claims in the review. Transaction records, signed disclosures, email correspondence, and inspection reports can all serve as evidence.</p>
 
-        <h3>Retaliatory Reviews</h3>
+        <h3 id="retaliatory-reviews">Retaliatory Reviews</h3>
         <p>Some reviews are posted as retaliation after a commission dispute, a transaction that did not close, or a personal conflict unrelated to the actual real estate transaction. If the review content is clearly about a personal grudge rather than a genuine client experience, it may qualify as off-topic content under Google's policies.</p>
 
         <div class="cta-box">
-          <h3>Protect Your Real Estate Reputation</h3>
+          <h3 id="protect-your-real-estate-reputation">Protect Your Real Estate Reputation</h3>
           <p>Our team specializes in removing unfair reviews for real estate professionals. Free evaluation, 94% success rate, and you pay only for reviews successfully removed. Pricing ranges from $700 to $950 per review.</p>
           <a href="https://deletegooglereviews.com/#intake-form" class="btn btn-orange btn-lg">Get Your Free Evaluation</a>
         </div>
 
-        <h2>Building a Reputation Strategy for Real Estate</h2>
+        <h2 id="building-a-reputation-strategy-for-real-estate">Building a Reputation Strategy for Real Estate</h2>
 
         <p>Removing unfair reviews is an important defensive measure, but the most effective long-term strategy combines removal with proactive reputation building. Here is how successful agents approach this.</p>
 
-        <h3>Request Reviews at Closing</h3>
+        <h3 id="request-reviews-at-closing">Request Reviews at Closing</h3>
         <p>The closing table is the most emotionally positive moment in a real estate transaction. Your client just bought or sold a home, and in most cases, they are happy and grateful for your guidance. This is the ideal time to ask for a Google review. Many agents include a review request as part of their closing gift or follow-up process, with a direct link to their Google Business Profile that makes leaving a review as simple as possible.</p>
 
-        <h3>Follow Up After the Move</h3>
+        <h3 id="follow-up-after-the-move">Follow Up After the Move</h3>
         <p>A follow-up email or call two to three weeks after closing, checking in on how the move went and whether the client needs any recommendations for local services, is both good client service and an additional opportunity to request a review. Clients who are settled into their new home and feeling positive about the purchase are often willing to leave a detailed, thoughtful review.</p>
 
-        <h3>Leverage Transaction Volume</h3>
+        <h3 id="leverage-transaction-volume">Leverage Transaction Volume</h3>
         <p>Agents who close 30, 40, or 50 transactions per year have a significant advantage in review management simply because of volume. If you consistently ask for reviews from happy clients, a few negative reviews become statistical noise in a sea of positive feedback. An agent with 200 five-star reviews and 4 one-star reviews has a far stronger profile than an agent with 12 five-star reviews and 2 one-star reviews.</p>
 
-        <h3>Create a Review Request System</h3>
+        <h3 id="create-a-review-request-system">Create a Review Request System</h3>
         <p>Do not leave review collection to chance. Build it into your transaction workflow as a standard step. Many successful agents use their CRM to automatically send a review request email at a set number of days after closing, with a direct link to their Google review page. The key is consistency. If you ask every client, the reviews will accumulate steadily over time.</p>
 
-        <h3>Respond to All Reviews</h3>
+        <h3 id="respond-to-all-reviews">Respond to All Reviews</h3>
         <p>Respond to every review, positive and negative. For positive reviews, a brief, personalized thank-you reinforces the relationship and shows prospective clients that you are engaged and appreciative. For negative reviews (particularly those you are not pursuing for removal), a professional, measured response demonstrates to prospective clients that you handle conflict with grace. Never argue or get defensive in a review response. Simply acknowledge the feedback, express your commitment to client satisfaction, and invite the reviewer to discuss their concerns privately.</p>
 
-        <h2>When to Act on a Negative Review</h2>
+        <h2 id="when-to-act-on-a-negative-review">When to Act on a Negative Review</h2>
 
         <p>Not every negative review warrants the effort and cost of pursuing removal. Here is a practical framework for real estate professionals:</p>
 
@@ -369,28 +457,57 @@
             <a href="#" class="footer-social-link" aria-label="X"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="1" y="1" width="15" height="15" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/><path d="M4.5 4.5L9 8.5M12.5 4.5L9 8.5M9 8.5L4.5 12.5M9 8.5L12.5 12.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
           </div>
         </div>
-        <div>
+                <div>
           <div class="footer-col-title">Services</div>
           <ul class="footer-links">
-            <li><a href="/#how-it-works">How It Works</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/#intake-form">Free Consultation</a></li>
-            <li><a href="/glassdoor-review-removal/">Glassdoor Removal</a></li>
-            <li><a href="/yelp-review-removal/">Yelp Removal</a></li>
-            <li><a href="/avvo-review-removal/">Avvo Removal</a></li>
-            <li><a href="/reddit-post-removal/">Reddit Removal</a></li>
-            <li><a href="/airbnb-review-removal/">Airbnb Removal</a></li>
+            <li><a href="/#how-it-works">Google Reviews</a></li>
+            <li><a href="/glassdoor-review-removal/">Glassdoor</a></li>
+            <li><a href="/yelp-review-removal/">Yelp</a></li>
+            <li><a href="/avvo-review-removal/">Avvo</a></li>
+            <li><a href="/reddit-post-removal/">Reddit</a></li>
+            <li><a href="/airbnb-review-removal/">Airbnb</a></li>
+            <li><a href="/complaintsboard-removal/">ComplaintsBoard</a></li>
+            <li><a href="/trustpilot-review-removal/">Trustpilot</a></li>
+            <li><a href="/bbb-review-removal/">BBB</a></li>
           </ul>
         </div>
+
         <div>
-          <div class="footer-col-title">Resources</div>
+          <div class="footer-col-title">Industries</div>
           <ul class="footer-links">
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/blog/how-to-remove-fake-google-review.html">How to Remove a Fake Google Review</a></li>
-            <li><a href="/blog/google-review-removal-for-law-firms.html">Review Removal for Law Firms</a></li>
-            <li><a href="/blog/google-review-removal-for-doctors.html">Review Removal for Doctors</a></li>
+            <li><a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a></li>
+            <li><a href="/blog/google-review-removal-for-doctors.html">Doctors</a></li>
+            <li><a href="/google-review-removal-for-dentists/">Dentists</a></li>
+            <li><a href="/google-review-removal-for-restaurants/">Restaurants</a></li>
+            <li><a href="/google-review-removal-for-real-estate/">Real Estate</a></li>
+            <li><a href="/google-review-removal-for-contractors/">Contractors</a></li>
+            <li><a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a></li>
+            <li><a href="/google-review-removal-for-hotels/">Hotels</a></li>
+            <li><a href="/google-review-removal-for-veterinarians/">Veterinarians</a></li>
+            <li><a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a></li>
           </ul>
         </div>
+
+        <div>
+          <div class="footer-col-title">Locations</div>
+          <ul class="footer-links">
+            <li><a href="/google-review-removal-san-diego/">San Diego</a></li>
+            <li><a href="/google-review-removal-los-angeles/">Los Angeles</a></li>
+            <li><a href="/google-review-removal-new-york/">New York</a></li>
+            <li><a href="/google-review-removal-houston/">Houston</a></li>
+            <li><a href="/google-review-removal-miami/">Miami</a></li>
+          </ul>
+          <div class="footer-col-title" style="margin-top:20px;">Company</div>
+          <ul class="footer-links">
+            <li><a href="/why-us/">Why Us</a></li>
+            <li><a href="/our-process/">Our Process</a></li>
+            <li><a href="/case-studies/">Case Studies</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+
         <div>
           <div class="footer-col-title">Contact</div>
           <ul class="footer-links">
@@ -405,6 +522,8 @@
         <span class="footer-award-chip">&#9733; Inc. 5000 Verified</span>
         <span class="footer-award-chip">&#9733; Forbes Council Member</span>
         <span class="footer-award-chip">&#9733; BBB Accredited</span>
+        <span class="footer-award-chip">&#9733; Trusted Since 2018</span>
+        <span class="footer-award-chip">&#9733; 100% Pay-for-Results Guarantee</span>
       </div>
       <hr class="footer-divider" />
       <div class="footer-bottom">

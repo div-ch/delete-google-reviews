@@ -207,4 +207,67 @@
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <!-- Company Pages -->
+  <url>
+    <loc>https://deletegooglereviews.com/why-us/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/our-process/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/case-studies/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/faq/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/reviews/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Additional Industry Pages -->
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-contractors/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-auto-dealers/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-hotels/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-veterinarians/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-financial-advisors/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

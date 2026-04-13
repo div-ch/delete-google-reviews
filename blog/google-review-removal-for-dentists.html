@@ -6,6 +6,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Review Removal for Dentists and Dental Practices</title>
   <meta name="description" content="How dentists can remove fake and unfair Google reviews while staying HIPAA compliant. Common dental review scenarios, removal strategies, and reputation protection." />
@@ -158,6 +166,29 @@
     .footer-social-link:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
     .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--navy); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); opacity: 0; transition: opacity 0.3s; z-index: 50; }
     .scroll-top.visible { opacity: 1; }
+  
+    /* Dropdown nav */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
+    .nav-dropdown > a::after { content: ''; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; margin-top: 2px; }
+    .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(15,45,82,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 0; min-width: 200px; z-index: 200; margin-top: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 13px; color: rgba(255,255,255,0.75); transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: white; }
+    .nav-phone { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-phone:hover { color: #4ade80; }
+    .nav-phone svg { flex-shrink: 0; }
+    @media (max-width: 1023px) { .nav-links { display: none; } .nav-phone span { display: none; } }
+    @media (min-width: 1024px) { .nav-mobile-toggle { display: none; } }
+
+  
+    /* Table of Contents */
+    .toc { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 10px; padding: 24px 28px; margin: 28px 0 36px; }
+    .toc-title { font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+    .toc-list { list-style: none; padding: 0; margin: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a { font-size: 14px; color: var(--blue); font-weight: 500; transition: color 0.2s; }
+    .toc-list a:hover { color: var(--navy); text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -175,14 +206,55 @@
         <div class="nav-logo-text">DeleteGoogleReviews.com<span class="nav-logo-sub">Independent Review Removal Experts</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="/#how-it-works">How It Works</a></li>
-        <li><a href="/#pricing">Pricing</a></li>
-        <li><a href="/#faq">FAQ</a></li>
+        <li class="nav-dropdown">
+          <a href="/#how-it-works">Services</a>
+          <div class="nav-dropdown-menu">
+            <a href="/#how-it-works">Google Reviews</a>
+            <a href="/glassdoor-review-removal/">Glassdoor</a>
+            <a href="/yelp-review-removal/">Yelp</a>
+            <a href="/avvo-review-removal/">Avvo</a>
+            <a href="/reddit-post-removal/">Reddit</a>
+            <a href="/airbnb-review-removal/">Airbnb</a>
+            <a href="/complaintsboard-removal/">ComplaintsBoard</a>
+            <a href="/trustpilot-review-removal/">Trustpilot</a>
+            <a href="/bbb-review-removal/">BBB</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/why-us/">Industries</a>
+          <div class="nav-dropdown-menu">
+            <a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a>
+            <a href="/blog/google-review-removal-for-doctors.html">Doctors</a>
+            <a href="/google-review-removal-for-dentists/">Dentists</a>
+            <a href="/google-review-removal-for-restaurants/">Restaurants</a>
+            <a href="/google-review-removal-for-real-estate/">Real Estate</a>
+            <a href="/google-review-removal-for-contractors/">Contractors</a>
+            <a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a>
+            <a href="/google-review-removal-for-hotels/">Hotels</a>
+            <a href="/google-review-removal-for-veterinarians/">Veterinarians</a>
+            <a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="/google-review-removal-san-diego/">Locations</a>
+          <div class="nav-dropdown-menu">
+            <a href="/google-review-removal-san-diego/">San Diego</a>
+            <a href="/google-review-removal-los-angeles/">Los Angeles</a>
+            <a href="/google-review-removal-new-york/">New York</a>
+            <a href="/google-review-removal-houston/">Houston</a>
+            <a href="/google-review-removal-miami/">Miami</a>
+          </div>
+        </li>
+        <li><a href="/our-process/">Our Process</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
         <li><a href="/blog/">Blog</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="/#intake-form" class="btn-nav-portal">Client Portal</a>
-        <a href="/#intake-form" class="btn btn-orange btn-sm">Get a Free Quote</a>
+        <a href="tel:+16197360704" class="nav-phone">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M14.5 11.5v2a1 1 0 01-1.1 1 10.5 10.5 0 01-4.6-1.6 10.3 10.3 0 01-3.2-3.2A10.5 10.5 0 014 5.1 1 1 0 015 4h2a1 1 0 011 .9 6.5 6.5 0 00.4 1.4 1 1 0 01-.2 1l-.9.9a8 8 0 003.2 3.2l.9-.9a1 1 0 011-.2 6.5 6.5 0 001.4.4 1 1 0 01.7 1z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>+1 (619) 736-0704</span>
+        </a>
+        <a href="/#intake-form" class="btn btn-orange btn-sm">Free Consultation</a>
       </div>
       <button class="nav-mobile-toggle" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="4" width="22" height="2" rx="1" fill="white"/><rect y="10" width="22" height="2" rx="1" fill="white"/><rect y="16" width="22" height="2" rx="1" fill="white"/></svg>
@@ -210,26 +282,42 @@
       <div class="article-content">
 
         <p>Dental practices face a unique and frustrating challenge when it comes to online reviews. Patients often arrive at the dentist anxious, sometimes in pain, and frequently worried about costs. That emotional state makes them far more likely to leave a negative review than patients visiting other types of healthcare providers. And when those reviews are unfair, misleading, or outright fake, dentists are constrained in their ability to respond publicly because of HIPAA regulations.</p>
+        <div class="toc">
+          <div class="toc-title">Table of Contents</div>
+          <ul class="toc-list">
+          <li><a href="#why-dental-practices-are-especially-vulnerable">Why Dental Practices Are Especially Vulnerable</a></li>
+          <li><a href="#patient-anxiety-and-emotional-decision-making">Patient Anxiety and Emotional Decision-Making</a></li>
+          <li><a href="#insurance-and-billing-disputes">Insurance and Billing Disputes</a></li>
+          <li><a href="#wait-times-and-scheduling-frustrations">Wait Times and Scheduling Frustrations</a></li>
+          <li><a href="#high-competition-in-local-search">High Competition in Local Search</a></li>
+          <li><a href="#the-hipaa-problem-why-dentists-cannot-simply-respond">The HIPAA Problem: Why Dentists Cannot Simply Respond</a></li>
+          <li><a href="#what-you-can-say-in-a-response">What You Can Say in a Response</a></li>
+          <li><a href="#common-dental-review-scenarios-that-qualify-for-removal">Common Dental Review Scenarios That Qualify for Removal</a></li>
+          <li><a href="#the-cosmetic-result-dispute">The Cosmetic Result Dispute</a></li>
+          <li><a href="#the-insurance-dispute-misdirected-at-the-practice">The Insurance Dispute Misdirected at the Practice</a></li>
+          </ul>
+        </div>
+
 
         <p>This guide covers why dental practices are particularly vulnerable to harmful Google reviews, the most common scenarios that lead to unfair reviews, how HIPAA limits your response options, proven strategies for getting policy-violating reviews removed, and how to build a positive review pipeline that protects your practice over the long term.</p>
 
-        <h2>Why Dental Practices Are Especially Vulnerable</h2>
+        <h2 id="why-dental-practices-are-especially-vulnerable">Why Dental Practices Are Especially Vulnerable</h2>
 
         <p>Dentistry sits at the intersection of several factors that make negative reviews more likely. Understanding these factors is the first step toward building a strategy that protects your online reputation.</p>
 
-        <h3>Patient Anxiety and Emotional Decision-Making</h3>
+        <h3 id="patient-anxiety-and-emotional-decision-making">Patient Anxiety and Emotional Decision-Making</h3>
         <p>Dental anxiety affects an estimated 36% of the population, with roughly 12% experiencing extreme dental fear. Patients who are already nervous are more likely to interpret normal aspects of treatment, such as post-procedure discomfort or the sensation of a dental injection, as evidence that something went wrong. When a patient leaves your office feeling anxious and uncomfortable, the impulse to share that experience in a review is strong. The review they write may not reflect the quality of care they received. It reflects how they felt in the moment.</p>
 
-        <h3>Insurance and Billing Disputes</h3>
+        <h3 id="insurance-and-billing-disputes">Insurance and Billing Disputes</h3>
         <p>Few things frustrate patients more than unexpected costs. A patient whose insurance covers less than they expected, or who did not understand their copay before the procedure, may blame the dental office for a problem that is ultimately between the patient and their insurer. These billing-related reviews are common in dentistry and often contain accusations of "overcharging" or "hidden fees" that are factually inaccurate but extremely damaging to a practice's reputation.</p>
 
-        <h3>Wait Times and Scheduling Frustrations</h3>
+        <h3 id="wait-times-and-scheduling-frustrations">Wait Times and Scheduling Frustrations</h3>
         <p>Dental offices often run behind schedule due to the unpredictable nature of procedures. A routine filling that turns into a root canal recommendation throws off the entire afternoon's appointments. Patients who waited longer than expected may leave reviews that focus entirely on the wait rather than the quality of care, giving prospective patients a misleading picture of the practice.</p>
 
-        <h3>High Competition in Local Search</h3>
+        <h3 id="high-competition-in-local-search">High Competition in Local Search</h3>
         <p>Dentistry is one of the most competitive categories in Google Maps. In most metro areas, dozens of dental practices compete for the same patients within a few-mile radius. Your Google star rating directly affects whether patients choose your practice or a competitor. A single one-star review can drop your average enough to cost you visibility and new patient inquiries.</p>
 
-        <h2>The HIPAA Problem: Why Dentists Cannot Simply Respond</h2>
+        <h2 id="the-hipaa-problem-why-dentists-cannot-simply-respond">The HIPAA Problem: Why Dentists Cannot Simply Respond</h2>
 
         <p>This is the factor that makes review management harder for dental practices than for nearly any other type of business. Under HIPAA (the Health Insurance Portability and Accountability Act), you cannot disclose protected health information about a patient, even in response to a public review that the patient themselves posted.</p>
 
@@ -241,73 +329,73 @@
           <p><strong>HIPAA violation risks:</strong> A HIPAA violation resulting from a review response can result in fines ranging from $100 to $50,000 per violation, with annual maximums reaching $1.5 million. Several dental practices have faced enforcement actions after responding to reviews with patient details. The financial and reputational cost of a HIPAA violation far outweighs the damage of any single negative review.</p>
         </div>
 
-        <h3>What You Can Say in a Response</h3>
+        <h3 id="what-you-can-say-in-a-response">What You Can Say in a Response</h3>
         <p>You are not completely unable to respond. You can post a generic response that does not acknowledge the reviewer as a patient. Something like: "We take all feedback seriously and strive to provide excellent care. We invite you to contact our office directly so we can address your concerns." This is better than silence but does little to counter specific false claims in the review.</p>
 
-        <h2>Common Dental Review Scenarios That Qualify for Removal</h2>
+        <h2 id="common-dental-review-scenarios-that-qualify-for-removal">Common Dental Review Scenarios That Qualify for Removal</h2>
 
         <p>Not every negative dental review violates Google's policies. But many of the review types that dental practices encounter most frequently do qualify for removal when properly documented. Here are the scenarios we see most often.</p>
 
-        <h3>The Cosmetic Result Dispute</h3>
+        <h3 id="the-cosmetic-result-dispute">The Cosmetic Result Dispute</h3>
         <p>A patient is unhappy with the appearance of veneers, whitening results, or a cosmetic procedure. They leave a one-star review claiming the dentist "ruined their smile." In many cases, the patient had unrealistic expectations that were discussed before treatment, or they are comparing their results to heavily filtered photos on social media. While a genuine difference of opinion about cosmetic results is not removable, reviews that make false factual claims about the procedure (such as alleging that different materials were used than discussed, or that the procedure was performed without consent) do violate Google's policies against false content.</p>
 
-        <h3>The Insurance Dispute Misdirected at the Practice</h3>
+        <h3 id="the-insurance-dispute-misdirected-at-the-practice">The Insurance Dispute Misdirected at the Practice</h3>
         <p>A patient's insurance denies coverage or covers less than expected. The patient blames the dental office, leaving a review that accuses the practice of "scamming" them or "not accepting their insurance when they said they would." If the review makes specific false claims about the practice's billing practices or insurance acceptance, this can qualify as misleading content under Google's policies. The key is documenting that the statements in the review are factually incorrect.</p>
 
-        <h3>The Wrong-Provider Review</h3>
+        <h3 id="the-wrong-provider-review">The Wrong-Provider Review</h3>
         <p>A patient saw a hygienist for a cleaning but writes a one-star review of the dentist by name, complaining about something the hygienist said or did. Reviews that attribute an experience to the wrong provider can sometimes be addressed through Google's review process, particularly if the review names a specific practitioner who was not involved in the patient's visit.</p>
 
-        <h3>The Competitor Attack</h3>
+        <h3 id="the-competitor-attack">The Competitor Attack</h3>
         <p>In competitive dental markets, it is not uncommon for competing practices (or their marketing agencies) to post fake negative reviews. The telltale signs include: reviewer accounts with no other review history, reviews posted in clusters within a short time frame, unusually specific language that mirrors competitor marketing, and reviewer accounts that have also left five-star reviews for a competing practice in the area. These reviews clearly violate Google's conflict-of-interest policies and are among the most straightforward to remove when properly documented.</p>
 
-        <h3>The Patient Who Was Never a Patient</h3>
+        <h3 id="the-patient-who-was-never-a-patient">The Patient Who Was Never a Patient</h3>
         <p>Some reviews come from people who never actually visited your practice. They may have called for a price quote and been unhappy with the cost, or they may have confused your practice with another one. If you can verify through your patient management system that the reviewer was never a patient, this is a strong basis for removal under Google's policies requiring reviews to be based on genuine experiences.</p>
 
-        <h2>Removal Strategies Specific to Dental Practices</h2>
+        <h2 id="removal-strategies-specific-to-dental-practices">Removal Strategies Specific to Dental Practices</h2>
 
         <p>The removal process for dental practice reviews requires a careful approach that accounts for HIPAA constraints while building the strongest possible case for each review.</p>
 
-        <h3>Document Without Disclosing</h3>
+        <h3 id="document-without-disclosing">Document Without Disclosing</h3>
         <p>When preparing a removal request, you need to build a case based on the review content itself and publicly available information, not on the patient's protected health information. Focus on what the reviewer said publicly, whether the reviewer can be verified as an actual patient (without disclosing details about any patient), and whether the review content violates specific Google policies such as spam, conflict of interest, or false content.</p>
 
-        <h3>Identify Policy Violations Precisely</h3>
+        <h3 id="identify-policy-violations-precisely">Identify Policy Violations Precisely</h3>
         <p>Google is far more likely to act on a removal request that cites a specific policy violation than one that simply says the review is unfair. For dental practice reviews, the most commonly applicable violations include: spam or fake engagement (for reviews from non-patients or competitor accounts), conflict of interest (for competitor-posted reviews), off-topic content (for reviews about insurance disputes rather than the dental experience), and misleading content (for reviews containing provably false factual claims).</p>
 
-        <h3>Use Professional Removal Services for Complex Cases</h3>
+        <h3 id="use-professional-removal-services-for-complex-cases">Use Professional Removal Services for Complex Cases</h3>
         <p>Dental practices benefit from professional removal services more than most other business types for one simple reason: HIPAA prevents you from making your strongest arguments directly to Google. A professional service can build a case based on the review content and publicly available information without requiring you to disclose any protected health information. They know how to frame removal requests in a way that gets results without putting your practice at legal risk.</p>
 
         <div class="cta-box">
-          <h3>Get Your Dental Practice Reviews Evaluated Free</h3>
+          <h3 id="get-your-dental-practice-reviews-evaluated-free">Get Your Dental Practice Reviews Evaluated Free</h3>
           <p>Our team understands the unique challenges dentists face with reviews and HIPAA compliance. We will evaluate your situation and provide an honest assessment of which reviews qualify for removal. 94% success rate. Pay only for reviews successfully removed.</p>
           <a href="https://deletegooglereviews.com/#intake-form" class="btn btn-orange btn-lg">Get Your Free Evaluation</a>
         </div>
 
-        <h2>Building a Positive Review Pipeline</h2>
+        <h2 id="building-a-positive-review-pipeline">Building a Positive Review Pipeline</h2>
 
         <p>Removing unfair reviews is important, but it is only half of a complete reputation strategy. The other half is proactively building a steady stream of positive reviews that accurately reflect the quality of care your practice provides.</p>
 
-        <h3>Ask at the Right Moment</h3>
+        <h3 id="ask-at-the-right-moment">Ask at the Right Moment</h3>
         <p>The best time to ask for a review is immediately after a positive interaction, not after a complex procedure. Patients who just had a successful cleaning, a painless filling, or a cosmetic procedure they are happy with are the most likely to leave a positive review. Train your front desk staff to recognize these moments and ask directly: "Would you be willing to share your experience on Google? It really helps our practice."</p>
 
-        <h3>Make It Easy</h3>
+        <h3 id="make-it-easy">Make It Easy</h3>
         <p>Create a direct link to your Google review page and share it via text message or email immediately after the appointment. The fewer steps between the ask and the review submission, the higher your conversion rate will be. Many dental practices include a QR code on their checkout counter or on post-appointment cards that takes patients directly to the review page.</p>
 
-        <h3>Follow Up Strategically</h3>
+        <h3 id="follow-up-strategically">Follow Up Strategically</h3>
         <p>A follow-up text or email 24 hours after an appointment serves two purposes. It demonstrates that you care about the patient's recovery and comfort, and it provides another opportunity to request a review. Patients who had a positive experience are often willing to leave a review when reminded, especially when the process is as simple as tapping a link.</p>
 
-        <h3>Respond to Every Positive Review</h3>
+        <h3 id="respond-to-every-positive-review">Respond to Every Positive Review</h3>
         <p>When patients do leave positive reviews, respond to each one. A brief, personalized thank-you shows prospective patients that you are engaged and appreciate feedback. It also encourages other patients to leave their own reviews when they see that the practice actively reads and responds to them.</p>
 
-        <h3>Volume Matters</h3>
+        <h3 id="volume-matters">Volume Matters</h3>
         <p>A dental practice with 200 five-star reviews and 3 one-star reviews has a much stronger profile than a practice with 15 five-star reviews and 3 one-star reviews, even though the star averages may be similar. The higher volume signals to both Google and potential patients that the negative reviews are outliers rather than representative of the typical experience.</p>
 
-        <h2>What About Review Gating?</h2>
+        <h2 id="what-about-review-gating">What About Review Gating?</h2>
 
         <p>Review gating is the practice of screening patients before directing them to Google, sending happy patients to Google and routing unhappy patients to a private feedback form instead. Google explicitly prohibits this practice. If Google detects that a practice is selectively soliciting only positive reviews, they can remove all of the solicited reviews and potentially penalize your listing. Do not use any software or service that offers review gating.</p>
 
         <p>The ethical and effective approach is to ask all patients for reviews equally and handle negative feedback through your customer service process rather than by trying to prevent negative reviews from being posted in the first place.</p>
 
-        <h2>When to Act and When to Let It Go</h2>
+        <h2 id="when-to-act-and-when-to-let-it-go">When to Act and When to Let It Go</h2>
 
         <p>Not every negative review is worth pursuing for removal. Here is a practical framework for deciding which reviews warrant action:</p>
 
@@ -317,7 +405,7 @@
           <li><strong>Consult a professional</strong> when: the review is causing measurable business impact (drop in new patient inquiries), you have multiple problematic reviews, or you are unsure whether a review qualifies for removal.</li>
         </ul>
 
-        <h2>The Cost of Inaction</h2>
+        <h2 id="the-cost-of-inaction">The Cost of Inaction</h2>
 
         <p>For dental practices, the math on review removal is straightforward. The average lifetime value of a dental patient ranges from $10,000 to $25,000 depending on the practice. If a negative Google review causes even two or three prospective patients per month to choose a competitor instead of your practice, the annual revenue impact can reach $100,000 or more. The cost of professional review removal, which typically ranges from <a href="https://deletegooglereviews.com/#pricing">$700 to $950 per review</a>, is a fraction of the revenue at stake.</p>
 
@@ -381,28 +469,57 @@
             <a href="#" class="footer-social-link" aria-label="X"><svg width="17" height="17" viewBox="0 0 17 17" fill="none"><rect x="1" y="1" width="15" height="15" rx="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/><path d="M4.5 4.5L9 8.5M12.5 4.5L9 8.5M9 8.5L4.5 12.5M9 8.5L12.5 12.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.4" stroke-linecap="round"/></svg></a>
           </div>
         </div>
-        <div>
+                <div>
           <div class="footer-col-title">Services</div>
           <ul class="footer-links">
-            <li><a href="/#how-it-works">How It Works</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/#intake-form">Free Consultation</a></li>
-            <li><a href="/glassdoor-review-removal/">Glassdoor Removal</a></li>
-            <li><a href="/yelp-review-removal/">Yelp Removal</a></li>
-            <li><a href="/avvo-review-removal/">Avvo Removal</a></li>
-            <li><a href="/reddit-post-removal/">Reddit Removal</a></li>
-            <li><a href="/airbnb-review-removal/">Airbnb Removal</a></li>
+            <li><a href="/#how-it-works">Google Reviews</a></li>
+            <li><a href="/glassdoor-review-removal/">Glassdoor</a></li>
+            <li><a href="/yelp-review-removal/">Yelp</a></li>
+            <li><a href="/avvo-review-removal/">Avvo</a></li>
+            <li><a href="/reddit-post-removal/">Reddit</a></li>
+            <li><a href="/airbnb-review-removal/">Airbnb</a></li>
+            <li><a href="/complaintsboard-removal/">ComplaintsBoard</a></li>
+            <li><a href="/trustpilot-review-removal/">Trustpilot</a></li>
+            <li><a href="/bbb-review-removal/">BBB</a></li>
           </ul>
         </div>
+
         <div>
-          <div class="footer-col-title">Resources</div>
+          <div class="footer-col-title">Industries</div>
           <ul class="footer-links">
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/blog/how-to-remove-fake-google-review.html">How to Remove a Fake Google Review</a></li>
-            <li><a href="/blog/google-review-removal-for-law-firms.html">Review Removal for Law Firms</a></li>
-            <li><a href="/blog/google-review-removal-for-doctors.html">Review Removal for Doctors</a></li>
+            <li><a href="/blog/google-review-removal-for-law-firms.html">Law Firms</a></li>
+            <li><a href="/blog/google-review-removal-for-doctors.html">Doctors</a></li>
+            <li><a href="/google-review-removal-for-dentists/">Dentists</a></li>
+            <li><a href="/google-review-removal-for-restaurants/">Restaurants</a></li>
+            <li><a href="/google-review-removal-for-real-estate/">Real Estate</a></li>
+            <li><a href="/google-review-removal-for-contractors/">Contractors</a></li>
+            <li><a href="/google-review-removal-for-auto-dealers/">Auto Dealers</a></li>
+            <li><a href="/google-review-removal-for-hotels/">Hotels</a></li>
+            <li><a href="/google-review-removal-for-veterinarians/">Veterinarians</a></li>
+            <li><a href="/google-review-removal-for-financial-advisors/">Financial Advisors</a></li>
           </ul>
         </div>
+
+        <div>
+          <div class="footer-col-title">Locations</div>
+          <ul class="footer-links">
+            <li><a href="/google-review-removal-san-diego/">San Diego</a></li>
+            <li><a href="/google-review-removal-los-angeles/">Los Angeles</a></li>
+            <li><a href="/google-review-removal-new-york/">New York</a></li>
+            <li><a href="/google-review-removal-houston/">Houston</a></li>
+            <li><a href="/google-review-removal-miami/">Miami</a></li>
+          </ul>
+          <div class="footer-col-title" style="margin-top:20px;">Company</div>
+          <ul class="footer-links">
+            <li><a href="/why-us/">Why Us</a></li>
+            <li><a href="/our-process/">Our Process</a></li>
+            <li><a href="/case-studies/">Case Studies</a></li>
+            <li><a href="/reviews/">Reviews</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+
         <div>
           <div class="footer-col-title">Contact</div>
           <ul class="footer-links">
@@ -417,6 +534,8 @@
         <span class="footer-award-chip">&#9733; Inc. 5000 Verified</span>
         <span class="footer-award-chip">&#9733; Forbes Council Member</span>
         <span class="footer-award-chip">&#9733; BBB Accredited</span>
+        <span class="footer-award-chip">&#9733; Trusted Since 2018</span>
+        <span class="footer-award-chip">&#9733; 100% Pay-for-Results Guarantee</span>
       </div>
       <hr class="footer-divider" />
       <div class="footer-bottom">
