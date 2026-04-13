@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://deletegooglereviews.com/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-13</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
+
+  <!-- Blog -->
   <url>
     <loc>https://deletegooglereviews.com/blog/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-04-13</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -43,6 +46,68 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://deletegooglereviews.com/blog/remove-google-review-left-by-competitor.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/google-review-removal-cost.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/how-to-respond-to-fake-google-review.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/ex-employee-bad-google-review.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/google-review-removal-for-restaurants.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/google-review-removal-for-dentists.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/google-review-removal-for-real-estate.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/report-google-review-for-defamation.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/google-review-policy-changes-2026.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/blog/case-study-law-firm-fake-reviews-removed.html</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Platform Landing Pages -->
+  <url>
     <loc>https://deletegooglereviews.com/glassdoor-review-removal/</loc>
     <lastmod>2026-04-12</lastmod>
     <priority>0.8</priority>
@@ -69,6 +134,76 @@
   <url>
     <loc>https://deletegooglereviews.com/airbnb-review-removal/</loc>
     <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/complaintsboard-removal/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/trustpilot-review-removal/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/bbb-review-removal/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Industry Landing Pages -->
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-restaurants/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-dentists/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-for-real-estate/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- City Landing Pages -->
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-san-diego/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-los-angeles/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-new-york/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-houston/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://deletegooglereviews.com/google-review-removal-miami/</loc>
+    <lastmod>2026-04-13</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
