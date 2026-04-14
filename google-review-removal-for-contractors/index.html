@@ -62,8 +62,8 @@
         "areaServed": "United States",
         "offers": {
           "@type": "Offer",
-          "priceRange": "$700-$950",
-          "description": "$700 to $950 per review removed. Pay only for reviews successfully removed.",
+          "priceRange": "Custom pricing. Contact us for a quote.",
+          "description": "Custom pricing per review removed. Pay only for reviews successfully removed.",
           "availability": "https://schema.org/InStock"
         }
       },
@@ -83,7 +83,7 @@
           {
             "@type": "Question",
             "name": "How much does it cost to remove a Google review for a contractor?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Our pricing ranges from $700 to $950 per review removed. You pay only for reviews that are successfully removed. There is no charge for reviews that cannot be removed. Contact us for a free consultation to evaluate your specific reviews." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Our pricing is custom based on your case. You pay only for reviews that are successfully removed. There is no charge for reviews that cannot be removed. Contact us for a free consultation to evaluate your specific reviews." }
           },
           {
             "@type": "Question",
@@ -222,7 +222,8 @@
     .nav-dropdown { position: relative; }
     .nav-dropdown > a { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
     .nav-dropdown > a::after { content: ''; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 3px solid currentColor; margin-top: 1px; flex-shrink: 0; }
-    .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(15,45,82,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 0; min-width: 200px; z-index: 200; margin-top: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(15,45,82,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 0; min-width: 200px; z-index: 200; padding-top: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .nav-dropdown-menu::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; background: transparent; }
     .nav-dropdown:hover .nav-dropdown-menu { display: block; }
     .nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 13px; color: rgba(255,255,255,0.75); transition: background 0.15s, color 0.15s; white-space: nowrap; }
     .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: white; }
@@ -444,7 +445,7 @@
         <div class="step">
           <div class="step-number">3</div>
           <h3>Review Removed. You Pay.</h3>
-          <p>When Google confirms the review has been removed, we notify you and our fee becomes due. Pricing ranges from $700 to $950 per review. If a review is not removed, there is no charge for that review.</p>
+          <p>When Google confirms the review has been removed, we notify you and our fee becomes due. Pricing ranges from custom pricing per review. If a review is not removed, there is no charge for that review.</p>
         </div>
       </div>
     </div>
@@ -494,7 +495,7 @@
             How much does it cost to remove a Google review for a contractor?
             <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
           </button>
-          <div class="faq-answer"><div class="faq-answer-inner">Our pricing ranges from $700 to $950 per review removed. You pay only for reviews that are successfully removed. There is no charge for reviews that cannot be removed. Contact us for a free consultation to evaluate your specific reviews.</div></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Our pricing is custom based on your case. You pay only for reviews that are successfully removed. There is no charge for reviews that cannot be removed. Contact us for a free consultation to evaluate your specific reviews.</div></div>
         </div>
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
