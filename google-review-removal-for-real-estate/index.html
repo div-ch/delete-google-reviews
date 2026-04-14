@@ -117,12 +117,12 @@
 
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 45, 82, 0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); transition: background 0.3s ease, box-shadow 0.35s ease; }
     .nav.scrolled { box-shadow: 0px 10px 60px rgba(3, 17, 44, 0.22); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1160px; margin: 0 auto; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1200px; margin: 0 auto; gap: 16px; }
     .nav-logo { display: flex; align-items: center; gap: 10px; }
     .nav-logo-text { font-family: var(--font-heading); font-weight: 600; color: white; font-size: 17px; line-height: 1.2; }
     .nav-logo-sub { font-family: var(--font-body); font-size: 11px; color: rgba(255,255,255,0.6); font-weight: 400; display: block; }
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.8); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; flex-shrink: 0; }
+    .nav-links a { color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: white; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-family: var(--font-body); font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s ease; white-space: nowrap; }
     .btn-orange { background: var(--orange); color: white; }
@@ -135,7 +135,7 @@
     .btn-nav-portal { color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 500; transition: color 0.2s; }
     .btn-nav-portal:hover { color: white; }
     .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-    @media (max-width: 767px) { .nav-links { display: none; } .nav-mobile-toggle { display: block; } }
+    @media (max-width: 767px) { /* nav-links hidden via 1023px rule */ .nav-mobile-toggle { display: block; } }
 
     .page-hero { min-height: 70vh; background: linear-gradient(135deg, var(--navy) 0%, #1a4a7a 45%, var(--blue) 100%); display: flex; align-items: center; padding-top: 80px; }
     .page-hero-inner { max-width: 1160px; margin: 0 auto; padding: 80px 24px; text-align: center; }
@@ -222,16 +222,17 @@
   
     /* Dropdown nav */
     .nav-dropdown { position: relative; }
-    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-    .nav-dropdown > a::after { content: ''; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; margin-top: 2px; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+    .nav-dropdown > a::after { content: ''; border-left: 3px solid transparent; border-right: 3px solid transparent; border-top: 3px solid currentColor; margin-top: 1px; flex-shrink: 0; }
     .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: rgba(15,45,82,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 0; min-width: 200px; z-index: 200; margin-top: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
     .nav-dropdown:hover .nav-dropdown-menu { display: block; }
     .nav-dropdown-menu a { display: block; padding: 8px 20px; font-size: 13px; color: rgba(255,255,255,0.75); transition: background 0.15s, color 0.15s; white-space: nowrap; }
     .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.08); color: white; }
-    .nav-phone { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-phone { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 500; transition: color 0.2s; white-space: nowrap; }
     .nav-phone:hover { color: #4ade80; }
     .nav-phone svg { flex-shrink: 0; }
-    @media (max-width: 1023px) { .nav-links { display: none; } .nav-phone span { display: none; } }
+    .nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    @media (max-width: 1023px) { .nav-links { display: none; } .nav-phone span { display: none; } .nav-actions .btn { font-size: 12px; padding: 8px 14px; } }
     @media (min-width: 1024px) { .nav-mobile-toggle { display: none; } }
 
   </style>
