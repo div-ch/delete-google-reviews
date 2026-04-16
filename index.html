@@ -833,6 +833,13 @@
       position: relative;
     }
 
+    @media (min-width: 640px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+
     @media (min-width: 768px) {
       .steps-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -2448,80 +2455,71 @@
         <h2 class="section-title">Why Google Removes Negative Reviews</h2>
         <p class="section-sub">Reviews can be removed when they violate a platform's content policies. We identify these violations and build the case that gets them taken down.</p>
       </div>
-      <div class="reasons-grid">
-        <div class="reason-card">
-          <div class="reason-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <path d="M11 2L2 7v4c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V7L11 2z" stroke="#2E86C1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 11l2 2 4-4" stroke="#2E86C1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L3 7v5c0 5.5 4 10.7 9 12 5-1.3 9-6.5 9-12V7L12 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 12l2 2 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <div>
-            <div class="reason-title">Fake or Incentivized Reviews</div>
-            <div class="reason-desc">Reviews from people who never used your service, paid review farms, or reviews posted in exchange for discounts violate every major platform's policies.</div>
-          </div>
+          <h3 class="step-title">Fake or Incentivized Reviews</h3>
+          <p class="step-desc">Reviews from people who never used your service, paid review farms, or reviews posted in exchange for discounts violate every major platform's policies.</p>
         </div>
 
-        <div class="reason-card">
-          <div class="reason-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <circle cx="11" cy="11" r="9" stroke="#2E86C1" stroke-width="1.8"/>
-              <path d="M11 7v5M11 15v1" stroke="#2E86C1" stroke-width="2" stroke-linecap="round"/>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="white" stroke-width="1.8"/>
+              <path d="M12 8v5M12 16v1" stroke="white" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div>
-            <div class="reason-title">Conflict of Interest</div>
-            <div class="reason-desc">Reviews left by current or former employees, competitors, or individuals with a personal dispute and financial motive are flagged as conflicts of interest.</div>
-          </div>
+          <h3 class="step-title">Conflict of Interest</h3>
+          <p class="step-desc">Reviews left by current or former employees, competitors, or individuals with a personal dispute and financial motive are flagged as conflicts of interest.</p>
         </div>
 
-        <div class="reason-card">
-          <div class="reason-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z" fill="#2E86C1"/>
+        <div class="step-card reveal reveal-delay-4">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M13 2L4 7v5c0 5 3.5 9.7 9 11 5.5-1.3 9-6 9-11V7L13 2z" stroke="white" stroke-width="1.8"/>
+              <path d="M10 16v-4H7l5-8v4h3l-5 8z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <div>
-            <div class="reason-title">Spam and Off-Topic Content</div>
-            <div class="reason-desc">Reviews advertising other businesses, containing irrelevant information about a third party, or posting the same review across multiple locations are classified as spam.</div>
-          </div>
+          <h3 class="step-title">Spam and Off-Topic Content</h3>
+          <p class="step-desc">Reviews advertising other businesses, containing irrelevant information about a third party, or posting the same review across multiple locations are classified as spam.</p>
         </div>
 
-        <div class="reason-card">
-          <div class="reason-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM8 12a1 1 0 110-2 1 1 0 010 2zm4 0a1 1 0 110-2 1 1 0 010 2zm4 0a1 1 0 110-2 1 1 0 010 2z" stroke="#2E86C1" stroke-width="1.8"/>
+        <div class="step-card reveal">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 10h8M8 13h5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </div>
-          <div>
-            <div class="reason-title">Hate Speech and Personal Attacks</div>
-            <div class="reason-desc">Reviews that contain personal insults, slurs, threats, or discriminatory language directed at individuals violate community standards and terms of service.</div>
-          </div>
+          <h3 class="step-title">Hate Speech and Personal Attacks</h3>
+          <p class="step-desc">Reviews that contain personal insults, slurs, threats, or discriminatory language directed at individuals violate community standards and terms of service.</p>
         </div>
 
-        <div class="reason-card">
-          <div class="reason-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <path d="M9 12l2 2 4-4m-9 4l-2 2M7 8l-2-2M19 4l-7 7" stroke="#2E86C1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" stroke-width="1.8"/>
+              <path d="M9 12h6M12 9v6" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </div>
-          <div>
-            <div class="reason-title">Mistaken Business Identity</div>
-            <div class="reason-desc">Reviews clearly intended for a different business location or a similarly named competitor are removable when the misidentification can be documented.</div>
-          </div>
+          <h3 class="step-title">Mistaken Business Identity</h3>
+          <p class="step-desc">Reviews clearly intended for a different business location or a similarly named competitor are removable when the misidentification can be documented.</p>
         </div>
 
-        <div class="reason-card">
-          <div class="reason-icon">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <rect x="3" y="3" width="16" height="16" rx="2" stroke="#2E86C1" stroke-width="1.8"/>
-              <path d="M8 12h6M8 8h6M8 16h4" stroke="#2E86C1" stroke-width="1.8" stroke-linecap="round"/>
+        <div class="step-card reveal reveal-delay-4">
+          <div class="step-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="2" stroke="white" stroke-width="1.8"/>
+              <path d="M8 12h8M8 8h8M8 16h5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </div>
-          <div>
-            <div class="reason-title">Legal and Privacy Violations</div>
-            <div class="reason-desc">Reviews disclosing confidential information, making defamatory claims, or violating court orders may qualify for expedited removal under legal grounds.</div>
-          </div>
+          <h3 class="step-title">Legal and Privacy Violations</h3>
+          <p class="step-desc">Reviews disclosing confidential information, making defamatory claims, or violating court orders may qualify for expedited removal under legal grounds.</p>
         </div>
       </div>
     </div>
