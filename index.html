@@ -3758,16 +3758,15 @@
       });
 
       // --- Reason cards stagger ---
-      var reasonsGrid = document.querySelector('.reasons-grid');
-      if (reasonsGrid) {
-        inView(reasonsGrid, function() {
+      document.querySelectorAll('.reasons-grid').forEach(function(grid) {
+        inView(grid, function() {
           animate(
-            reasonsGrid.querySelectorAll('.reason-card'),
+            grid.querySelectorAll('.reason-card'),
             { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0px)'] },
             { duration: 0.55, easing: [0.16, 1, 0.3, 1], delay: stagger(0.08) }
           );
         }, { margin: '0px 0px -60px 0px' });
-      }
+      });
 
       // --- Count-up on hero stats ---
       document.querySelectorAll('[data-count]').forEach(function(el) {
