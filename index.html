@@ -3576,7 +3576,8 @@
         services: selectedServices.join(', '),
         situation: situation,
         budget: budget,
-        source: window.location.href
+        source: window.location.href,
+        referralSource: sessionStorage.getItem('referral_source') || 'direct'
       };
 
       if (typeof gtag === 'function') {
@@ -3809,6 +3810,24 @@
       setupCarousel('.tc-track', 35);
       setupCarousel('.marquee-track', 25);
       setupCarousel('.trust-bar-inner', 20);
+    })();
+  </script>
+
+  <!-- Affiliate Referral Tracking -->
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var refValue = params.get('ref');
+      if (refValue) {
+        sessionStorage.setItem('referral_source', refValue);
+        if (typeof gtag === 'function') {
+          gtag('event', 'referral_visit', {
+            event_category: 'Affiliate',
+            event_label: refValue,
+            value: 1
+          });
+        }
+      }
     })();
   </script>
 

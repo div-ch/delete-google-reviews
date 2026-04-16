@@ -604,6 +604,24 @@
     });
   </script>
 
+    <!-- Affiliate Referral Tracking -->
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var refValue = params.get('ref');
+      if (refValue) {
+        sessionStorage.setItem('referral_source', refValue);
+        if (typeof gtag === 'function') {
+          gtag('event', 'referral_visit', {
+            event_category: 'Affiliate',
+            event_label: refValue,
+            value: 1
+          });
+        }
+      }
+    })();
+  </script>
+
   <!-- GA4 Conversion Event Tracking -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
