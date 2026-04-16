@@ -3567,8 +3567,7 @@
 
       var payload = {
         timestamp: new Date().toISOString(),
-        firstName: fname,
-        lastName: lname,
+        fullName: fname + (lname ? ' ' + lname : ''),
         email: email,
         phone: phone,
         reviewPageUrl: reviewPageUrl,
@@ -3634,8 +3633,7 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           timestamp: new Date().toISOString(),
-          firstName: '',
-          lastName: '',
+          fullName: '',
           email: email,
           phone: '',
           reviewPageUrl: '',
@@ -3643,7 +3641,8 @@
           services: '',
           situation: '',
           budget: '',
-          source: window.location.href
+          source: window.location.href,
+          referralSource: sessionStorage.getItem('referral_source') || 'direct'
         })
       }).then(function() {
         document.getElementById('guide-form').style.display = 'none';
