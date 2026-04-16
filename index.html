@@ -3579,6 +3579,14 @@
         source: window.location.href
       };
 
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          event_category: 'Intake Form',
+          event_label: 'Homepage Intake Form',
+          value: 1
+        });
+      }
+
       fetch(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -3610,6 +3618,15 @@
       var email = document.getElementById('guide-email').value;
       if (!email) return;
       var SHEET_URL = 'https://script.google.com/macros/s/AKfycbx-x5SsnE5xn_inFTmsKe0l-nMXSXS0wyxgjSkTUI0dZC8G8f6aHZttE-aPgXW0_93J/exec';
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'guide_download', {
+          event_category: 'Lead Magnet',
+          event_label: 'Guide Email Capture',
+          value: 1
+        });
+      }
+
       fetch(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -3793,6 +3810,50 @@
       setupCarousel('.marquee-track', 25);
       setupCarousel('.trust-bar-inner', 20);
     })();
+  </script>
+
+  <!-- GA4 Conversion Event Tracking -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Phone click tracking
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'phone_click', {
+              event_category: 'Contact',
+              event_label: 'Phone Number Click',
+              value: 1
+            });
+          }
+        });
+      });
+
+      // Email click tracking
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'email_click', {
+              event_category: 'Contact',
+              event_label: 'Email Click',
+              value: 1
+            });
+          }
+        });
+      });
+
+      // CTA button tracking
+      document.querySelectorAll('a[href*="#intake-form"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'cta_click', {
+              event_category: 'CTA',
+              event_label: 'Free Consultation CTA',
+              value: 1
+            });
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
